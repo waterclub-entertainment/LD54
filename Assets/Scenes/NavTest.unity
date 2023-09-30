@@ -661,7 +661,6 @@ MonoBehaviour:
   peers:
   - {fileID: 486563717}
   - {fileID: 2032263494}
-  other: {fileID: 0}
 --- !u!114 &916077318 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 4754970801981493784, guid: bc9f09b4297505a44813a84447390ad3, type: 3}
@@ -744,6 +743,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 963239490984361455, guid: 64fe57477294e7d4b8a0c9ca47bfa713, type: 3}
   building: {fileID: 1082538722}
+  isSpawning: 1
   cooldown: 2
 --- !u!114 &1872850052
 MonoBehaviour:
@@ -758,7 +758,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   peers: []
-  other: {fileID: 0}
 --- !u!114 &1981402818 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7380651674836203280, guid: bc9f09b4297505a44813a84447390ad3, type: 3}
