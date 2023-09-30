@@ -33,18 +33,26 @@ public class NavBuilding : MonoBehaviour
                 {
                     float half = delta.y / 2f;
 
-                    var newNavNode = Instantiate(new GameObject(), a.GlobalPosition + new Vector2(0, half), Quaternion.identity, transform);
+                    var newNavNode = new GameObject();
+                    newNavNode.transform.SetParent(transform);
+                    newNavNode.transform.position = a.GlobalPosition + new Vector2(0, half);
                     navA = newNavNode.AddComponent<NavNode>();
-                    newNavNode = Instantiate(new GameObject(), a.GlobalPosition + new Vector2(delta.x, half), Quaternion.identity, transform);
+                    newNavNode = new GameObject();
+                    newNavNode.transform.SetParent(transform);
+                    newNavNode.transform.position = a.GlobalPosition + new Vector2(delta.x, half);
                     navB = newNavNode.AddComponent<NavNode>();
                 }
                 else
                 {
                     float half = delta.x / 2f;
 
-                    var newNavNode = Instantiate(new GameObject(), a.GlobalPosition + new Vector2(half, 0), Quaternion.identity, transform);
+                    var newNavNode = new GameObject();
+                    newNavNode.transform.SetParent(transform);
+                    newNavNode.transform.position = a.GlobalPosition + new Vector2(half, 0);
                     navA = newNavNode.AddComponent<NavNode>();
-                    newNavNode = Instantiate(new GameObject(), a.GlobalPosition + new Vector2(half, delta.y), Quaternion.identity, transform);
+                    newNavNode = new GameObject();
+                    newNavNode.transform.SetParent(transform);
+                    newNavNode.transform.position = a.GlobalPosition + new Vector2(half, delta.y);
                     navB = newNavNode.AddComponent<NavNode>();
                 }
                 a.AddPeer(navA);
