@@ -55,9 +55,9 @@ public class NavBuilding : MonoBehaviour
                     newNavNode.transform.position = a.GlobalPosition + new Vector2(half, delta.y);
                     navB = newNavNode.AddComponent<NavNode>();
                 }
-                a.AddPeer(navA);
+                a.AddExternalPeer(navA);
                 navA.AddPeer(navB);
-                b.AddPeer(navB);
+                b.AddExternalPeer(navB);
             }
             else
             {
@@ -66,8 +66,11 @@ public class NavBuilding : MonoBehaviour
         }
         else
         {
-            a.AddPeer(b);
+            a.AddExternalPeer(b);
+            b.AddExternalPeer(a);
         }
+        a.SetOtherSide(b);
+        b.SetOtherSide(a);
     }
 
     public float GetPath(NavNode current, ref List<NavNode> path, NavNode goal, ref List<NavNode> visited)

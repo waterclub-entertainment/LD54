@@ -51,7 +51,14 @@ public class Navigator : MonoBehaviour
         positionSeries.Clear();
         if (isGoing)
         {
-            goal = currentRoom.InternalNodes[UnityEngine.Random.Range(0, currentRoom.InternalNodes.Length)];
+            if (currentRoom.InternalNodes.Length > 1)
+            {
+                goal = currentRoom.InternalNodes[UnityEngine.Random.Range(0, currentRoom.InternalNodes.Length)];
+            }
+            else
+            {
+                goal = (currentRoom.InternalNodes[0] as NavNodeInterface).Other;
+            }
         }
         List<NavNode> tmp = new List<NavNode>();
         navManager.GetPath(currentNode, ref positionSeries, goal, ref tmp);
@@ -88,7 +95,8 @@ public class Navigator : MonoBehaviour
                             currentRoom = frst.Room;
                             OnEnterRoom.Invoke(this, currentRoom);
                         }
-                        else
+                        else if ((positionSeries.Count > 1 && (frst as NavNodeInterface).isExternal(positionSeries[1])) ||
+                            (positionSeries.Count == 1 && (frst as NavNodeInterface).isExternal(goal)))
                         {
                             OnLeaveRoom.Invoke(this, currentRoom);
                             currentRoom = null;
@@ -105,6 +113,15 @@ public class Navigator : MonoBehaviour
                 transform.position -= dist.normalized * speed * Time.deltaTime;
                 if (dist.sqrMagnitude < sqrArrivalRadius)
                 {
+                    if (goal is NavNodeInterface)
+                    {
+                        if (currentRoom == null)
+                        {
+                            currentRoom = goal.Room;
+                            OnEnterRoom.Invoke(this, currentRoom);
+                        }
+                    }
+
                     currentNode = goal;
                     OnNavigatorArrived.Invoke(this, goal);
                     goal = null;

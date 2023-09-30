@@ -29,6 +29,13 @@ public class NavNodeInterface : NavNode
 
     private bool isLinked = false;
 
+    private NavNodeInterface other;
+    private List<NavNode> externalNodes = new List<NavNode>();
+    public NavNodeInterface Other
+    {
+        get { return other; }
+    }
+
     public bool IsLinked
     {
         get
@@ -37,10 +44,23 @@ public class NavNodeInterface : NavNode
         }
     }
 
+    public void SetOtherSide(NavNodeInterface n)
+    {
+        other = n;
+    }
+
+    public bool isExternal(NavNode n)
+    {
+        return externalNodes.Contains(n);
+    }
+
     public void AddExternalPeer(NavNode peer, bool propagate = true)
     {
         if (!isLinked)
+        {
+            externalNodes.Add(peer);
             base.AddPeer(peer, propagate);
+        }
         isLinked = true;
     }
     protected override void OnDrawGizmos()
