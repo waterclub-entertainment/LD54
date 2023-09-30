@@ -6,7 +6,17 @@ namespace Enums
 {
     public enum Species
     {
-        NONE
+        STAG,
+        CAT,
+        RAT,
+        RAVEN,
+        SPARROW,
+        LIZARD,
+        FROG,
+        CRANE,
+        CAPIBARA,
+        MANTIS,
+        COUNT
     }
 
     public enum Operation
