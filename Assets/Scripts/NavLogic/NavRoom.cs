@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
+[RequireComponent(typeof(Room))]
 public class NavRoom : MonoBehaviour
 {
     private NavNode[] nodes;
@@ -31,12 +32,17 @@ public class NavRoom : MonoBehaviour
         }
     }
 
+
+    private Room room;
+    public Room Room {  get { return room; } }
+
     // Start is called before the first frame update
     void Start()
     {
         nodes = GetComponentsInChildren<NavNode>();
         roomInterfaces = GetComponentsInChildren<NavNodeInterface>();
         roomSlots = GetComponentsInChildren<NavNodeSlot>();
+        room = GetComponent<Room>();
 
         foreach (NavNode node in nodes)
         {

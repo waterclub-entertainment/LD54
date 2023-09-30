@@ -19,7 +19,12 @@ public class Navigator : MonoBehaviour
 
     private List<NavNode> positionSeries = new List<NavNode>();
 
+    [HideInInspector]
     public UnityEvent<Navigator, NavNode> OnNavigatorArrived = new UnityEvent<Navigator, NavNode>();
+    [HideInInspector]
+    public UnityEvent<Navigator, NavRoom> OnLeaveRoom = new UnityEvent<Navigator, NavRoom>();
+    [HideInInspector]
+    public UnityEvent<Navigator, NavRoom> OnEnterRoom = new UnityEvent<Navigator, NavRoom>();
 
     // Start is called before the first frame update
     void Start()
@@ -50,7 +55,17 @@ public class Navigator : MonoBehaviour
         }
         List<NavNode> tmp = new List<NavNode>();
         navManager.GetPath(currentNode, ref positionSeries, goal, ref tmp);
+        positionSeries.Insert(0, currentNode);
+    }
 
+    public void SetDirection(NavNode g)
+    {
+        positionSeries.Clear();
+        isGoing = true;
+        goal = g;
+        List<NavNode> tmp = new List<NavNode>();
+        navManager.GetPath(currentNode, ref positionSeries, goal, ref tmp);
+        positionSeries.Insert(0, currentNode);
     }
 
     // Update is called once per frame
@@ -71,9 +86,11 @@ public class Navigator : MonoBehaviour
                         if (currentRoom == null)
                         {
                             currentRoom = frst.Room;
+                            OnEnterRoom.Invoke(this, currentRoom);
                         }
                         else
                         {
+                            OnLeaveRoom.Invoke(this, currentRoom);
                             currentRoom = null;
                         }
                     }
@@ -88,8 +105,8 @@ public class Navigator : MonoBehaviour
                 transform.position -= dist.normalized * speed * Time.deltaTime;
                 if (dist.sqrMagnitude < sqrArrivalRadius)
                 {
-                    OnNavigatorArrived.Invoke(this, goal);
                     currentNode = goal;
+                    OnNavigatorArrived.Invoke(this, goal);
                     goal = null;
                     FindDirection();
                 }

@@ -58,6 +58,7 @@ GameObject:
   - component: {fileID: 6950000544930067494}
   - component: {fileID: 2483020687877569682}
   - component: {fileID: 905162909534388141}
+  - component: {fileID: 3856798974349697232}
   m_Layer: 0
   m_Name: Plane
   m_TagString: Untagged
@@ -81,6 +82,7 @@ Transform:
   - {fileID: 4664339715414607215}
   - {fileID: 8576052592025185616}
   - {fileID: 511205551245260089}
+  - {fileID: 2933690284453944853}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &3664438540036967608
@@ -167,6 +169,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a23b30ebe0357054ea39b2fea59f01b8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3856798974349697232
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1503348182209764866}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 97a39763e9b96c34cac0f1b87d4384c0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpeciesRules: {fileID: 0}
 --- !u!1 &6684057833295936970
 GameObject:
   m_ObjectHideFlags: 0
@@ -260,3 +275,88 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   peers:
   - {fileID: 7380651674836203280}
+--- !u!1 &7295187327446110543
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2933690284453944853}
+  - component: {fileID: 377956891541980770}
+  - component: {fileID: 2460199859727457796}
+  - component: {fileID: 2252249646005514519}
+  m_Layer: 10
+  m_Name: Slot
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2933690284453944853
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7295187327446110543}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0.7071068, y: -0, z: -0, w: 0.7071068}
+  m_LocalPosition: {x: 3.1, y: 0, z: 3.41}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 2887960754232527141}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &377956891541980770
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7295187327446110543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3e8f31922b09d24fb92c986f728369c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  peers:
+  - {fileID: 7380651674836203280}
+  Tag: SAUNA
+--- !u!114 &2460199859727457796
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7295187327446110543}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 260bb2d8f7180084f9b183d515404d69, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SpaRoom: {fileID: 3856798974349697232}
+  token: {fileID: 0}
+  entity: {fileID: 0}
+--- !u!135 &2252249646005514519
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7295187327446110543}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 0.25
+  m_Center: {x: 0, y: 0, z: 0}

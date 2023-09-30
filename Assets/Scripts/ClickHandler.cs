@@ -31,17 +31,24 @@ public class ClickHandler : MonoBehaviour
         {
             if (currentHighlighted != null)
                 currentHighlighted.transform.position = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -cam.transform.position.z));
-        }   
-        if (Input.GetMouseButtonUp(0))
+        }
+        if (Input.GetMouseButtonUp(0) && currentHighlighted != null)
         {
             RaycastHit hitInfo = new RaycastHit();
             bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, Mathf.Infinity, SlotLayerMask);
             if (hit)
             {
-                Debug.Log("Hit " + hitInfo.transform.gameObject.name);
-                currentHighlighted.transform.SetParent(hitInfo.transform);
-                currentHighlighted.transform.localPosition = Vector3.zero;
-                currentHighlighted = null;
+                var slot = hitInfo.transform.gameObject.GetComponent<Slot>();
+
+                if (!slot.IsOccupied)
+                {
+                    var token = currentHighlighted.GetComponent<EntityToken>();
+                    token.OnDropInSlot(hitInfo.transform.gameObject.GetComponent<NavNode>());
+                    slot.OnSetToken(token);
+                    currentHighlighted.transform.SetParent(hitInfo.transform);
+                    currentHighlighted.transform.localPosition = Vector3.zero;
+                    currentHighlighted = null;
+                }
             }
             else
             {
