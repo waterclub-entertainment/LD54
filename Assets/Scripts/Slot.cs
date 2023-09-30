@@ -11,6 +11,10 @@ public class Slot : MonoBehaviour
     private Entity entity;
     public bool IsOccupied { get { return entity != null || token != null; } }
 
+    public Enums.Operation appliedTreatment;
+    public float operationTime;
+    private float operating;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,11 +31,13 @@ public class Slot : MonoBehaviour
         if (entity == null && token != null && token.IsMatchingEntity(e)) {
             entity = e;
             e.Navigate.StopNavigation();
+            operating = 0;
         }
     }
 
     public void CompleteOperation()
     {
+        entity.ApplyTreatment(appliedTreatment);
         entity.Navigate.StartNavigation();
         token.OnCompleteOperation();
         entity = null;
@@ -43,7 +49,11 @@ public class Slot : MonoBehaviour
     {
         if (entity != null)
         {
-            //operate
+            operating += Time.deltaTime;
+            if (operating > operationTime)
+            {
+                CompleteOperation();
+            }
         }
     }
 }

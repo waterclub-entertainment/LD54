@@ -76,7 +76,9 @@ public class NavBuilding : MonoBehaviour
     public float GetPath(NavNode current, ref List<NavNode> path, NavNode goal, ref List<NavNode> visited)
     {
         float minDist = 99999f;
-
+        
+        if (current == null || goal == null)
+            return minDist;
         visited.Add(current);
 
         var predPath = new List<NavNode>();

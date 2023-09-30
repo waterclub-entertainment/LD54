@@ -59,10 +59,10 @@ public class Navigator : MonoBehaviour
             {
                 goal = (currentRoom.InternalNodes[0] as NavNodeInterface).Other;
             }
+            List<NavNode> tmp = new List<NavNode>();
+            navManager.GetPath(currentNode, ref positionSeries, goal, ref tmp);
+            positionSeries.Insert(0, currentNode);
         }
-        List<NavNode> tmp = new List<NavNode>();
-        navManager.GetPath(currentNode, ref positionSeries, goal, ref tmp);
-        positionSeries.Insert(0, currentNode);
     }
 
     public void SetDirection(NavNode g)

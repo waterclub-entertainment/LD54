@@ -34,6 +34,10 @@ public class Entity : MonoBehaviour
         }
     }
 
+    public void ApplyTreatment(Enums.Operation op)
+    {
+        Debug.Log("Applied " + op.ToString());
+    }
     public void ApproachToken(NavNode slot)
     {
         nav.SetDirection(slot);

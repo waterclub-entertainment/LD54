@@ -2,12 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public enum Species
+namespace Enums
 {
-    NONE
-}
+    public enum Species
+    {
+        NONE
+    }
 
-public enum Mood
-{
-    NONE
+    public enum Operation
+    {
+        STEAM_BATH
+    }
+    public enum Mood
+    {
+        NONE
+    }
 }
