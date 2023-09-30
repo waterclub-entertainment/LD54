@@ -297,6 +297,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3856798974349697232, guid: bc9f09b4297505a44813a84447390ad3, type: 3}
+      propertyPath: SpeciesRules
+      value: 
+      objectReference: {fileID: 11400000, guid: 797e3ec6ba8f2584594edc0d5f4b004a, type: 2}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -550,6 +554,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3856798974349697232, guid: bc9f09b4297505a44813a84447390ad3, type: 3}
+      propertyPath: SpeciesRules
+      value: 
+      objectReference: {fileID: 11400000, guid: 797e3ec6ba8f2584594edc0d5f4b004a, type: 2}
     - target: {fileID: 6684057833295936970, guid: bc9f09b4297505a44813a84447390ad3, type: 3}
       propertyPath: m_Name
       value: NavNodeInterface1

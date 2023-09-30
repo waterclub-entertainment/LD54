@@ -12,4 +12,32 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5d21564021396be4ba7c92ae5646f361, type: 3}
   m_Name: Blacklist
   m_EditorClassIdentifier: 
-  Blacklist: []
+  Blacklist:
+  - sp1: 0
+    sp2: 9
+  - sp1: 1
+    sp2: 9
+  - sp1: 2
+    sp2: 9
+  - sp1: 3
+    sp2: 9
+  - sp1: 4
+    sp2: 9
+  - sp1: 5
+    sp2: 9
+  - sp1: 6
+    sp2: 9
+  - sp1: 7
+    sp2: 9
+  - sp1: 1
+    sp2: 2
+  - sp1: 7
+    sp2: 6
+  - sp1: 7
+    sp2: 5
+  - sp1: 3
+    sp2: 5
+  - sp1: 4
+    sp2: 1
+  - sp1: 0
+    sp2: 7
