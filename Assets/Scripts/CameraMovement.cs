@@ -8,11 +8,17 @@ public class CameraMovement : MonoBehaviour
     private Camera cam;
 
     private Vector3 dragOrigin;
-
+    public float zoomStep, minCameraSize, maxCameraSize;
 
     private void Update()
     {
-        PanCamera(); 
+        PanCamera();
+        if (Input.GetAxis("Mouse ScrollWheel") != 0f) // forward
+        {
+            float SizeChange = Input.GetAxis("Mouse ScrollWheel");
+            cam.orthographicSize -= SizeChange * zoomStep;
+            cam.orthographicSize = Mathf.Clamp(cam.orthographicSize, minCameraSize, maxCameraSize);
+        }
     }
 
 
@@ -24,7 +30,7 @@ public class CameraMovement : MonoBehaviour
         {
             Vector3 difference = dragOrigin - cam.ScreenToWorldPoint(Input.mousePosition);
             //Für Troubleshootingfzwecke
-            print("origin" + dragOrigin + " neue Position " + cam.ScreenToWorldPoint(Input.mousePosition) + " =unbterschied" + difference);
+            print("origin" + dragOrigin + " neue Position " + cam.ScreenToWorldPoint(Input.mousePosition) + " =unterschied" + difference);
 
             cam.transform.position += difference;
         }
