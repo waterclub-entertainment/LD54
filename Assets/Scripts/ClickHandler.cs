@@ -25,14 +25,7 @@ public class ClickHandler : MonoBehaviour
             RaycastHit hitInfo = new RaycastHit();
             bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, Mathf.Infinity, TokenLayerMask);
             if (hit)
-            {
-                Debug.Log("Hit " + hitInfo.transform.gameObject.name);
                 currentHighlighted = hitInfo.transform.gameObject;
-            }
-            else
-            {
-                Debug.Log("No hit");
-            }
         }
         if (Input.GetMouseButton(0))
         {

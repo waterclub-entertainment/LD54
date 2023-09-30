@@ -7,7 +7,10 @@ public class CameraMovement : MonoBehaviour
     [SerializeField]
     private Camera cam;
 
-    private Vector3 dragOrigin;
+    [Range(0f, 0.5f)]
+    public float panThreshold = 0.1f;
+    public float scrollSpeed;
+
     public float zoomStep, minCameraSize, maxCameraSize;
 
     private void Update()
@@ -24,15 +27,24 @@ public class CameraMovement : MonoBehaviour
 
     private void PanCamera()
     {
-        if (Input.GetMouseButtonDown(0))
-            dragOrigin = cam.ScreenToWorldPoint(Input.mousePosition);
-        if (Input.GetMouseButton(0))
-        {
-            Vector3 difference = dragOrigin - cam.ScreenToWorldPoint(Input.mousePosition);
-            //Für Troubleshootingfzwecke
-            print("origin" + dragOrigin + " neue Position " + cam.ScreenToWorldPoint(Input.mousePosition) + " =unterschied" + difference);
+        Vector2 mousePos = Input.mousePosition;
+        mousePos = new Vector2(mousePos.x / Screen.width, mousePos.y / Screen.height);
 
-            cam.transform.position += difference;
+        if (mousePos.x < panThreshold)
+        {
+            cam.transform.position -= Vector3.right * Time.deltaTime * scrollSpeed;
+        }
+        if (mousePos.x > 1f - panThreshold)
+        {
+            cam.transform.position += Vector3.right * Time.deltaTime * scrollSpeed;
+        }
+        if (mousePos.y < panThreshold)
+        {
+            cam.transform.position -= Vector3.up * Time.deltaTime * scrollSpeed;
+        }
+        if (mousePos.y > 1f - panThreshold)
+        {
+            cam.transform.position += Vector3.up * Time.deltaTime * scrollSpeed;
         }
     }
 }
