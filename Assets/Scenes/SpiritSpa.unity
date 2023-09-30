@@ -359,7 +359,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cam: {fileID: 1610444484}
   panThreshold: 0.1
-  scrollSpeed: 12
+  scrollSpeed: 25
   zoomStep: 75
   minCameraSize: 10
   maxCameraSize: 75
