@@ -20,7 +20,7 @@ public class NavBuilding : MonoBehaviour
 
     private void BuildNavGraphConnection(NavNodeInterface a, NavNodeInterface b)
     {
-        bool xAligned = a.GlobalPosition.x == a.GlobalPosition.x;
+        bool xAligned = a.GlobalPosition.x == b.GlobalPosition.x;
         bool yAligned = a.GlobalPosition.y == b.GlobalPosition.y;
         Vector2 delta = b.GlobalPosition - a.GlobalPosition;
 
@@ -29,14 +29,22 @@ public class NavBuilding : MonoBehaviour
             if (Vector2.Dot(delta, a.Direction) >= 0 && Vector2.Dot(delta, b.Direction) <= 0) //check if on the correct side
             {
                 NavNode navA = null, navB = null;
-                if (delta.x >= delta.y)
+                if (a.Direction.x < a.Direction.y)
                 {
                     float half = delta.y / 2f;
-                    float factor = half / a.Direction.y;
 
-                    var newNavNode = Instantiate(new GameObject(), a.GlobalPosition + a.Direction * factor, Quaternion.identity, transform);
+                    var newNavNode = Instantiate(new GameObject(), a.GlobalPosition + new Vector2(0, half), Quaternion.identity, transform);
                     navA = newNavNode.AddComponent<NavNode>();
-                    newNavNode = Instantiate(new GameObject(), a.GlobalPosition + a.Direction * factor + Vector2.right * delta.x, Quaternion.identity, transform);
+                    newNavNode = Instantiate(new GameObject(), a.GlobalPosition + new Vector2(delta.x, half), Quaternion.identity, transform);
+                    navB = newNavNode.AddComponent<NavNode>();
+                }
+                else
+                {
+                    float half = delta.x / 2f;
+
+                    var newNavNode = Instantiate(new GameObject(), a.GlobalPosition + new Vector2(half, 0), Quaternion.identity, transform);
+                    navA = newNavNode.AddComponent<NavNode>();
+                    newNavNode = Instantiate(new GameObject(), a.GlobalPosition + new Vector2(half, delta.y), Quaternion.identity, transform);
                     navB = newNavNode.AddComponent<NavNode>();
                 }
                 a.AddPeer(navA);
