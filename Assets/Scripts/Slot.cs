@@ -7,6 +7,9 @@ using UnityEngine;
 public class Slot : MonoBehaviour
 {
     public Room SpaRoom;
+
+    SpriteRenderer refSprite;
+
     private EntityToken token;
     private Entity entity;
     public bool IsOccupied { get { return entity != null || token != null; } }
@@ -18,7 +21,8 @@ public class Slot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        refSprite = GetComponentInChildren<SpriteRenderer>();
+        refSprite.transform.up = Vector3.up;
     }
 
     public void OnSetToken(EntityToken token)
@@ -35,6 +39,11 @@ public class Slot : MonoBehaviour
         }
     }
 
+    public void RemoveToken()
+    {
+        token = null;
+    }
+
     public void CompleteOperation()
     {
         entity.ApplyTreatment(appliedTreatment);
@@ -42,6 +51,16 @@ public class Slot : MonoBehaviour
         token.OnCompleteOperation();
         entity = null;
         token = null;
+    }
+
+    public void StopHovered()
+    {
+        refSprite.enabled = false;
+    }
+    public void IsHovered(EntityToken token)
+    {
+        refSprite.sprite = token.gameObject.GetComponent<SpriteRenderer>().sprite;
+        refSprite.enabled = true;
     }
 
     // Update is called once per frame
@@ -56,4 +75,5 @@ public class Slot : MonoBehaviour
             }
         }
     }
+
 }

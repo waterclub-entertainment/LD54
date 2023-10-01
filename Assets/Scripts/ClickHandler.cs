@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ClickHandler : MonoBehaviour
@@ -7,6 +8,7 @@ public class ClickHandler : MonoBehaviour
     private Camera cam;
 
     private GameObject currentHighlighted;
+    Slot lastHovered;
 
     public LayerMask TokenLayerMask;
     public LayerMask SlotLayerMask;
@@ -26,8 +28,7 @@ public class ClickHandler : MonoBehaviour
             bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, Mathf.Infinity, TokenLayerMask);
             if (hit)
             {
-                Debug.Log("Hit Token");
-                currentHighlighted = hitInfo.transform.gameObject;
+                currentHighlighted = hitInfo.transform.GetComponent<IToken>().GetToken().gameObject;
                 currentHighlighted.GetComponent<EntityToken>().OnStartDrag();
             }
         }
@@ -35,6 +36,29 @@ public class ClickHandler : MonoBehaviour
         {
             if (currentHighlighted != null)
                 currentHighlighted.transform.position = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -cam.transform.position.z));
+            RaycastHit hitInfo = new RaycastHit();
+            bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, Mathf.Infinity, SlotLayerMask);
+            if (hit)
+            {
+                var slot = hitInfo.transform.gameObject.GetComponent<Slot>();
+
+                if (slot != lastHovered && lastHovered != null)
+                {
+                    lastHovered.StopHovered();
+                    lastHovered = null;
+                }
+
+                if (!slot.IsOccupied)
+                {
+                    lastHovered = slot;
+                    slot.IsHovered(currentHighlighted.GetComponentInChildren<IToken>().GetToken());
+                }
+            }
+            else if (!hit && lastHovered != null)
+            {
+                lastHovered.StopHovered();
+                lastHovered = null;
+            }
         }
         if (Input.GetMouseButtonUp(0) && currentHighlighted != null)
         {
@@ -58,8 +82,12 @@ public class ClickHandler : MonoBehaviour
             }
             if (currentHighlighted != null) {
                 currentHighlighted.GetComponent<EntityToken>().OnCancelDrag();
-                currentHighlighted.transform.localPosition = Vector3.zero;
                 currentHighlighted = null;
+            }
+            if (lastHovered != null)
+            {
+                lastHovered.StopHovered();
+                lastHovered = null;
             }
         }
     }
