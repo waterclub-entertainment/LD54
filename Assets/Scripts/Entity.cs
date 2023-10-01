@@ -55,12 +55,12 @@ public class Entity : MonoBehaviour
     public bool ApproachToken(NavNode slot)
     {
         var res = IsOperationAllowed(slot.GetComponent<Slot>().appliedTreatment);
-        if (res == null) {
+        if (res is Reaction reaction) {
+            ShowReaction(reaction);
+            return false;
+        } else {
             nav.SetDirection(slot);
             return true;
-        } else {
-            ShowReaction(res!);
-            return false;
         }
     }
 
