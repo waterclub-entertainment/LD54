@@ -35,6 +35,8 @@ public class Room : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (SpeciesRules == null)
+            return;
         int[] countMap = new int[(int)Enums.Species.COUNT];
 
         foreach(Entity e in entities)

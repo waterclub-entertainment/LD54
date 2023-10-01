@@ -757,7 +757,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3e081a9543a29364181503ad12e9d60a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 963239490984361455, guid: 64fe57477294e7d4b8a0c9ca47bfa713, type: 3}
+  Spawns:
+  - weight: 1
+    prefab: {fileID: 3251320290774989856, guid: 017a26be56a413f42aa03f43df46c8f9, type: 3}
+  - weight: 1
+    prefab: {fileID: 1954657351890056871, guid: 7b28c4c0ec8630d4d921c968d328dcdd, type: 3}
+  - weight: 1
+    prefab: {fileID: 3966552800215005600, guid: c12b9a7119df4e14aa516a615343aebb, type: 3}
+  - weight: 1
+    prefab: {fileID: 9065737242579033300, guid: 1d342eb53341e6048938b78a06ec4a75, type: 3}
   building: {fileID: 1082538722}
   isSpawning: 1
   cooldown: 2
