@@ -47,7 +47,7 @@ public class Slot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (entity != null)
+        if (entity != null && !SpaRoom.HasConflict())
         {
             operating += Time.deltaTime;
             if (operating > operationTime)

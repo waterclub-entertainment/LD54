@@ -13,6 +13,7 @@ public class Room : MonoBehaviour
 
 
     private List<Entity> entities = new List<Entity>();
+    private bool hasConflict = false;
 
     // Start is called before the first frame update
     void Start()
@@ -35,6 +36,7 @@ public class Room : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        hasConflict = false;
         if (SpeciesRules == null)
             return;
         int[] countMap = new int[(int)Enums.Species.COUNT];
@@ -44,6 +46,10 @@ public class Room : MonoBehaviour
             countMap[(int)e.Species]++;
         }
         if (!SpeciesRules.Check(countMap))
-            Debug.Log("CONFLICT!!!!");
+            hasConflict = true;
+    }
+
+    public bool HasConflict() {
+        return hasConflict;
     }
 }
