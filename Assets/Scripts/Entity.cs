@@ -54,43 +54,75 @@ public class Entity : MonoBehaviour
 
     public bool ApproachToken(NavNode slot)
     {
-        if (IsOperationAllowed(slot.GetComponent<Slot>().appliedTreatment)) {
+        var res = IsOperationAllowed(slot.GetComponent<Slot>().appliedTreatment);
+        if (res == null) {
             nav.SetDirection(slot);
             return true;
+        } else {
+            ShowReaction(res!);
+            return false;
         }
-        return false;
+    }
+
+    public void ShowReaction(Reaction reaction) {
+        // TODO
     }
 
     // TODO: When returning false this should also return the reaction (speech bubble)
     // that should be displayed.
-    private bool IsOperationAllowed(Enums.Operation op) {
+    private Reaction? IsOperationAllowed(Enums.Operation op) {
         // Has to undress first
         if (lastOperation == null && op != Enums.Operation.CHANGING_ROOM) {
-            return false;
+            Reaction reaction;
+            reaction.room = Enums.Operation.CHANGING_ROOM;
+            reaction.hotRoom = false;
+            reaction.forbidden = false;
+            return reaction;
         }
 
         // Has to dress last
         // TODO: Check energy
         if (op == Enums.Operation.EXIT && lastOperation != Enums.Operation.CHANGING_ROOM) {
-            return false;
+            Reaction reaction;
+            reaction.room = Enums.Operation.CHANGING_ROOM;
+            reaction.hotRoom = false;
+            reaction.forbidden = false;
+            return reaction;
         }
 
         // Cold bath only after hot spring or sauna
         if (op == Enums.Operation.COLD_BATH && !EnumHelper.IsOperationHot(lastOperation)) {
-            return false;
+            Reaction reaction;
+            reaction.room = null;
+            reaction.hotRoom = true;
+            reaction.forbidden = false;
+            return reaction;
         }
 
         // No two hot things after each other
         if (EnumHelper.IsOperationHot(lastOperation) && EnumHelper.IsOperationHot(op)) {
-            return false;
+            Reaction reaction;
+            reaction.room = null;
+            reaction.hotRoom = true;
+            reaction.forbidden = true;
+            return reaction;
         }
 
-        return true;
+        return null;
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public struct Reaction {
+
+        public Enums.Operation? room;
+        // If hot is true then room should be null
+        public bool hotRoom;
+        public bool forbidden;
+
     }
 }
