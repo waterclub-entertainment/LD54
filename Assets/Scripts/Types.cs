@@ -1,3 +1,4 @@
+using Enums;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,12 +20,25 @@ namespace Enums
         COUNT
     }
 
-    public enum Operation
+    public enum Operation //TODO
     {
         STEAM_BATH
     }
-    public enum Mood
+
+    public enum Mood //TODO
     {
         NONE
     }
+}
+
+namespace Helper
+{
+    public class EnumHelper
+    {
+        public static Mood GetMood(int moodLevel)
+        {
+            return Mood.NONE; //TODO
+        }
+    }
+
 }

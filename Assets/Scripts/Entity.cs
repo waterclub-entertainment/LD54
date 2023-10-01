@@ -6,7 +6,16 @@ using UnityEngine;
 public class Entity : MonoBehaviour
 {
     private Navigator nav;
+    private Animator animator;
+
     public Enums.Species Species;
+
+    public List<Enums.Operation> Operations; //TODO
+    public int mood;
+    public Enums.Mood MoodLevel {
+        get { return Helper.EnumHelper.GetMood(mood); }
+    }
+
     public Navigator Navigate { get { return nav; } }
     // Start is called before the first frame update
     void Start()
