@@ -15,9 +15,9 @@ public class EntityToken : MonoBehaviour
         renderHandler = GetComponent<Renderer>();
     }
 
-    public void OnDropInSlot(NavNode slot)
+    public bool OnDropInSlot(NavNode slot)
     {
-        parent.ApproachToken(slot);
+        return parent.ApproachToken(slot);
     }
 
     public void OnCompleteOperation()

@@ -48,9 +48,10 @@ public class Entity : MonoBehaviour
     {
         Debug.Log("Applied " + op.ToString());
     }
-    public void ApproachToken(NavNode slot)
+    public bool ApproachToken(NavNode slot)
     {
         nav.SetDirection(slot);
+        return true;
     }
 
     // Update is called once per frame
