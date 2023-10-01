@@ -117,6 +117,7 @@ GameObject:
   - component: {fileID: 1932259191086253931}
   - component: {fileID: 6596118370132900775}
   - component: {fileID: 2370261634450653773}
+  - component: {fileID: 7492242286389916420}
   m_Layer: 0
   m_Name: Torso
   m_TagString: Untagged
@@ -213,6 +214,27 @@ MonoBehaviour:
     m_Extent: {x: 3.3364315, y: 4.59453, z: 0}
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
+--- !u!95 &7492242286389916420
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1089828515292575875}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e219dea3bb1423a449be1e78280d80f7, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1177116947306315971
 GameObject:
   m_ObjectHideFlags: 0
@@ -1704,7 +1726,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9222943725714627208}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.24102354, w: 0.9705193}
+  m_LocalRotation: {x: -0, y: -0, z: 0.27979124, w: 0.96006083}
   m_LocalPosition: {x: 2.9860158, y: -0.00000027996472, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -1713,4 +1735,4 @@ Transform:
   - {fileID: 5655206943994382031}
   - {fileID: 5466703161923258430}
   m_Father: {fileID: 5950889563735885810}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 32.496}
