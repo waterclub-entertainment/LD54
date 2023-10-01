@@ -16,13 +16,15 @@ public class RuleSet : ScriptableObject
     public List<SpeciesTuple> Blacklist;
 
 
-    public bool Check(int[] speciesCounts)
+    public HashSet<Enums.Species> Check(int[] speciesCounts)
     {
+        HashSet<Enums.Species> conflictingSpecies = new HashSet<Enums.Species>();
         foreach(SpeciesTuple s in Blacklist)
         {
             if (speciesCounts[(int)s.sp1] > 0 && speciesCounts[(int)s.sp2] > 0)
-                return false;
+                conflictingSpecies.Add(s.sp1);
+                conflictingSpecies.Add(s.sp2);
         }
-        return true;
+        return conflictingSpecies;
     }
 }

@@ -69,14 +69,24 @@ public class Slot : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (entity != null && !SpaRoom.HasConflict())
+        if (entity != null)
         {
-            operating += Time.deltaTime;
-            progressImage.enabled = true;
-            progressImage.fillAmount = 1.0f - (operating / operationTime);
-            if (operating > operationTime)
-            {
-                CompleteOperation();
+            if (!SpaRoom.HasConflict()) {
+                entity.SetConflict(false);
+                operating += Time.deltaTime;
+                progressImage.enabled = true;
+                progressImage.fillAmount = 1.0f - (operating / operationTime);
+                if (operating > operationTime)
+                {
+                    CompleteOperation();
+                }
+            } else {
+                if (SpaRoom.IsConflicting(entity.Species)) {
+                    entity.SetConflict(true);
+                } else {
+                    entity.SetConflict(false);
+                    // TODO: This entity is not fighting, but maybe we should still indicate that it is not progressing? Maybe it should be progressing?
+                }
             }
         }
         else

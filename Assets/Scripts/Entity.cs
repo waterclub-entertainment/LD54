@@ -120,6 +120,10 @@ public class Entity : MonoBehaviour
         return null;
     }
 
+    public void SetConflict(bool conflict) {
+        // TODO
+    }
+
     // Update is called once per frame
     void Update()
     {
