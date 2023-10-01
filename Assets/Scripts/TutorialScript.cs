@@ -13,6 +13,9 @@ public class TutorialScript : MonoBehaviour
     private TMP_Text CharacterResponse;
     [SerializeField]
     private Canvas TutorialCanvas;
+    [SerializeField]
+    private GameObject CameraMovement;
+
     private string[,] Dialogue = new string[8, 3]
     {
         {"Markus", "Hello, departed soul! Welcome to the Spirit Spa.", "Uhm... hi? Why am I here?"},
@@ -31,6 +34,7 @@ public class TutorialScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        CameraMovement.SetActive(false);
         UpdateText(DialogueLine);
     }
 
@@ -40,8 +44,14 @@ public class TutorialScript : MonoBehaviour
         UpdateText(DialogueLine);
     }
 
+    public void Skip()
+    {
+        TutorialCanvas.enabled = false;
+    }
+
     private void UpdateText(int Zeile)
     {
+        
         Debug.Log(DialogueLine + " " + Dialogue.Length);
         if (Zeile < Dialogue.GetLength(0))
         {
@@ -50,7 +60,12 @@ public class TutorialScript : MonoBehaviour
             CharacterResponse.text = Dialogue[Zeile, 2];
         }
         else
+        {
             TutorialCanvas.enabled = false;
+            CameraMovement.SetActive(true);
+        }
+            
+        
 
     }
 }
