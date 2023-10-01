@@ -56,8 +56,7 @@ public class ClickHandler : MonoBehaviour
                     }
                 }
             }
-            else
-            {
+            if (currentHighlighted != null) {
                 currentHighlighted.GetComponent<EntityToken>().OnCancelDrag();
                 currentHighlighted.transform.localPosition = Vector3.zero;
                 currentHighlighted = null;
