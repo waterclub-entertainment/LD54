@@ -334,13 +334,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1866873615600306194}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.75815153, w: 0.6520785}
+  m_LocalRotation: {x: -0, y: -0, z: 0.7585804, w: 0.65157956}
   m_LocalPosition: {x: 2.1310878, y: -0.0000003092202, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3307591537649983550}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 98.678}
 --- !u!1 &1892017520697442958
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,14 +429,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2860694251498995894}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.77563417, w: 0.63118273}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7747152, w: 0.6323104}
   m_LocalPosition: {x: -12.227016, y: -3.7581844, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1187935005965549689}
   m_Father: {fileID: 8485251115728958126}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: -101.558}
 --- !u!1 &2944381669372255033
 GameObject:
   m_ObjectHideFlags: 0
@@ -751,6 +751,7 @@ GameObject:
   - component: {fileID: 6749015269170874971}
   - component: {fileID: 5342057841454246649}
   - component: {fileID: 4524712651121564542}
+  - component: {fileID: 1842409704099333155}
   m_Layer: 0
   m_Name: Torso
   m_TagString: Untagged
@@ -847,6 +848,27 @@ MonoBehaviour:
     m_Extent: {x: 3.0048866, y: 4.6496334, z: 0}
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
+--- !u!95 &1842409704099333155
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4416381238789685111}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: d56ccfa9aab420947848322b974ad4db, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4500327873029717337
 GameObject:
   m_ObjectHideFlags: 0
@@ -2212,3 +2234,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Species: 2
+  Operations: 
+  mood: 0

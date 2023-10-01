@@ -26,6 +26,7 @@ public class ClickHandler : MonoBehaviour
             bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, Mathf.Infinity, TokenLayerMask);
             if (hit)
             {
+                Debug.Log("Hit Token");
                 currentHighlighted = hitInfo.transform.gameObject;
                 currentHighlighted.GetComponent<EntityToken>().OnStartDrag();
             }
