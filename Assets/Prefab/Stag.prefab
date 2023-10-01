@@ -1309,6 +1309,7 @@ GameObject:
   - component: {fileID: 7274078485595523190}
   - component: {fileID: 5454589142448417053}
   - component: {fileID: 8756326344711283117}
+  - component: {fileID: 2627835857040889778}
   m_Layer: 0
   m_Name: Torso
   m_TagString: Untagged
@@ -1428,6 +1429,18 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &2627835857040889778
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5974428487375658235}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 66a44a6b7cae3904ea5c4100050f21f3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6314927557763034512
 GameObject:
   m_ObjectHideFlags: 0

@@ -7,7 +7,7 @@ using Helper;
 public class Entity : MonoBehaviour
 {
     private Navigator nav;
-    private Animator animator;
+    private AnimationHook anim;
     private Enums.Operation? lastOperation;
 
     public Enums.Species Species;
@@ -21,11 +21,13 @@ public class Entity : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        anim = GetComponentInChildren<AnimationHook>();
         nav = GetComponent<Navigator>();
         nav.OnEnterRoom.AddListener(OnEnterRoom);
         nav.OnLeaveRoom.AddListener(OnLeaveRoom);
         nav.OnNavigatorArrived.AddListener(OnEnterNode);
         lastOperation = null;
+        anim.StartWalk();
     }
 
     void OnLeaveRoom(Navigator nav, NavRoom room)
@@ -43,6 +45,7 @@ public class Entity : MonoBehaviour
         {
             var slt = n.GetComponent<Slot>();
             slt.OnEntityArrived(this);
+            anim.StopWalk();
         }
     }
 
@@ -55,6 +58,7 @@ public class Entity : MonoBehaviour
             // TODO: Despawn
             Destroy(gameObject);
         }
+        anim.StartWalk();
     }
 
     public bool ApproachToken(NavNode slot)
