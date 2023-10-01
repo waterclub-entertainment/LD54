@@ -134,7 +134,8 @@ public class Navigator : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.green;
-        Gizmos.DrawLine(transform.position, currentNode.transform.position);
+        if (currentNode != null)
+            Gizmos.DrawLine(transform.position, currentNode.transform.position);
         if (positionSeries.Count > 0)
             Gizmos.DrawLine(transform.position, positionSeries[0].transform.position);
         else if (goal != null)
