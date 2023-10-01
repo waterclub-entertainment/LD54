@@ -13,7 +13,7 @@ public class Entity : MonoBehaviour
     public Enums.Species Species;
 
     public int mood;
-    public Enums.Mood MoodLevel {
+    public Enums.Mood moodLevel {
         get { return Helper.EnumHelper.GetMood(mood); }
     }
 
@@ -50,6 +50,11 @@ public class Entity : MonoBehaviour
     {
         Debug.Log("Applied " + op.ToString());
         lastOperation = op;
+        mood += 1;
+        if (moodLevel == Enums.Mood.ASCENDED) {
+            // TODO: Despawn
+            Destroy(gameObject);
+        }
     }
 
     public bool ApproachToken(NavNode slot)
