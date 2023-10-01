@@ -25,7 +25,10 @@ public class ClickHandler : MonoBehaviour
             RaycastHit hitInfo = new RaycastHit();
             bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, Mathf.Infinity, TokenLayerMask);
             if (hit)
+            {
                 currentHighlighted = hitInfo.transform.gameObject;
+                currentHighlighted.GetComponent<EntityToken>().OnStartDrag();
+            }
         }
         if (Input.GetMouseButton(0))
         {
@@ -52,6 +55,7 @@ public class ClickHandler : MonoBehaviour
             }
             else
             {
+                currentHighlighted.GetComponent<EntityToken>().OnCancelDrag();
                 currentHighlighted.transform.localPosition = Vector3.zero;
                 currentHighlighted = null;
             }
