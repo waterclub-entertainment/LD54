@@ -306,7 +306,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpaRoom: {fileID: 449805334}
-  appliedTreatment: 0
+  appliedTreatment: 7
   operationTime: 5
 --- !u!4 &405374199
 Transform:
@@ -391,7 +391,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpaRoom: {fileID: 449805334}
-  appliedTreatment: 0
+  appliedTreatment: 7
   operationTime: 5
 --- !u!114 &406924552
 MonoBehaviour:
@@ -750,7 +750,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpaRoom: {fileID: 449805334}
-  appliedTreatment: 0
+  appliedTreatment: 7
   operationTime: 5
 --- !u!114 &623990107
 MonoBehaviour:
@@ -885,7 +885,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpaRoom: {fileID: 449805334}
-  appliedTreatment: 0
+  appliedTreatment: 7
   operationTime: 5
 --- !u!4 &938821818
 Transform:
@@ -1068,7 +1068,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpaRoom: {fileID: 449805334}
-  appliedTreatment: 0
+  appliedTreatment: 7
   operationTime: 5
 --- !u!114 &1241644303
 MonoBehaviour:
@@ -1198,7 +1198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   SpaRoom: {fileID: 449805334}
-  appliedTreatment: 0
+  appliedTreatment: 7
   operationTime: 5
 --- !u!114 &1567451659
 MonoBehaviour:
