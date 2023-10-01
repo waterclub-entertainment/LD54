@@ -47,11 +47,13 @@ public class ClickHandler : MonoBehaviour
                 if (!slot.IsOccupied)
                 {
                     var token = currentHighlighted.GetComponent<EntityToken>();
-                    token.OnDropInSlot(hitInfo.transform.gameObject.GetComponent<NavNode>());
-                    slot.OnSetToken(token);
-                    currentHighlighted.transform.SetParent(hitInfo.transform);
-                    currentHighlighted.transform.localPosition = Vector3.zero;
-                    currentHighlighted = null;
+                    var success = token.OnDropInSlot(hitInfo.transform.gameObject.GetComponent<NavNode>());
+                    if (success) {
+                        slot.OnSetToken(token);
+                        currentHighlighted.transform.SetParent(hitInfo.transform);
+                        currentHighlighted.transform.localPosition = Vector3.zero;
+                        currentHighlighted = null;
+                    }
                 }
             }
             else

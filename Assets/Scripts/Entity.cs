@@ -1,16 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Helper;
 
 [RequireComponent(typeof(Navigator))]
 public class Entity : MonoBehaviour
 {
     private Navigator nav;
     private Animator animator;
+    private Enums.Operation? lastOperation;
 
     public Enums.Species Species;
 
-    public List<Enums.Operation> Operations; //TODO
     public int mood;
     public Enums.Mood MoodLevel {
         get { return Helper.EnumHelper.GetMood(mood); }
@@ -24,6 +25,7 @@ public class Entity : MonoBehaviour
         nav.OnEnterRoom.AddListener(OnEnterRoom);
         nav.OnLeaveRoom.AddListener(OnLeaveRoom);
         nav.OnNavigatorArrived.AddListener(OnEnterNode);
+        lastOperation = null;
     }
 
     void OnLeaveRoom(Navigator nav, NavRoom room)
@@ -47,15 +49,80 @@ public class Entity : MonoBehaviour
     public void ApplyTreatment(Enums.Operation op)
     {
         Debug.Log("Applied " + op.ToString());
+        lastOperation = op;
     }
-    public void ApproachToken(NavNode slot)
+
+    public bool ApproachToken(NavNode slot)
     {
-        nav.SetDirection(slot);
+        var res = IsOperationAllowed(slot.GetComponent<Slot>().appliedTreatment);
+        if (res == null) {
+            nav.SetDirection(slot);
+            return true;
+        } else {
+            ShowReaction(res!);
+            return false;
+        }
+    }
+
+    public void ShowReaction(Reaction reaction) {
+        // TODO
+    }
+
+    // TODO: When returning false this should also return the reaction (speech bubble)
+    // that should be displayed.
+    private Reaction? IsOperationAllowed(Enums.Operation op) {
+        // Has to undress first
+        if (lastOperation == null && op != Enums.Operation.CHANGING_ROOM) {
+            Reaction reaction;
+            reaction.room = Enums.Operation.CHANGING_ROOM;
+            reaction.hotRoom = false;
+            reaction.forbidden = false;
+            return reaction;
+        }
+
+        // Has to dress last
+        // TODO: Check energy
+        if (op == Enums.Operation.EXIT && lastOperation != Enums.Operation.CHANGING_ROOM) {
+            Reaction reaction;
+            reaction.room = Enums.Operation.CHANGING_ROOM;
+            reaction.hotRoom = false;
+            reaction.forbidden = false;
+            return reaction;
+        }
+
+        // Cold bath only after hot spring or sauna
+        if (op == Enums.Operation.COLD_BATH && !EnumHelper.IsOperationHot(lastOperation)) {
+            Reaction reaction;
+            reaction.room = null;
+            reaction.hotRoom = true;
+            reaction.forbidden = false;
+            return reaction;
+        }
+
+        // No two hot things after each other
+        if (EnumHelper.IsOperationHot(lastOperation) && EnumHelper.IsOperationHot(op)) {
+            Reaction reaction;
+            reaction.room = null;
+            reaction.hotRoom = true;
+            reaction.forbidden = true;
+            return reaction;
+        }
+
+        return null;
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    public struct Reaction {
+
+        public Enums.Operation? room;
+        // If hot is true then room should be null
+        public bool hotRoom;
+        public bool forbidden;
+
     }
 }
