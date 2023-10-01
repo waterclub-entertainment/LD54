@@ -23,7 +23,7 @@ public class Slot : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        refSprite = GetComponentInChildren<SpriteRenderer>();
+        refSprite = transform.Find("Torso").gameObject.GetComponent<SpriteRenderer>();
         refSprite.transform.up = Vector3.up;
         progressImage.enabled = false;
     }
