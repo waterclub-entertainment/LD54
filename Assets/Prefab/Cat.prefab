@@ -363,6 +363,7 @@ GameObject:
   - component: {fileID: 1234298124720000224}
   - component: {fileID: 6082035089208430753}
   - component: {fileID: 745145072363240113}
+  - component: {fileID: 5093869495027854631}
   m_Layer: 0
   m_Name: Cat
   m_TagString: Untagged
@@ -427,8 +428,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Species: 1
-  Operations: 
   mood: 0
+--- !u!114 &5093869495027854631
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1954657351890056871}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bdf53e87ff6eec40a018098f98b008a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitialHeading: 0
 --- !u!1 &2127080965416826608
 GameObject:
   m_ObjectHideFlags: 0

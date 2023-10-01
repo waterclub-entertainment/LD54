@@ -798,6 +798,7 @@ GameObject:
   - component: {fileID: 3402833827728165685}
   - component: {fileID: 1153711531199251627}
   - component: {fileID: 7802696137620549484}
+  - component: {fileID: 8798626279291750806}
   m_Layer: 0
   m_Name: PrayingMantis
   m_TagString: Untagged
@@ -862,8 +863,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Species: 9
-  Operations: 
   mood: 0
+--- !u!114 &8798626279291750806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3966552800215005600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1bdf53e87ff6eec40a018098f98b008a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  InitialHeading: 0
 --- !u!1 &4152079846457333199
 GameObject:
   m_ObjectHideFlags: 0
