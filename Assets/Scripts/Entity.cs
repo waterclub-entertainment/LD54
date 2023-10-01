@@ -28,6 +28,7 @@ public class Entity : MonoBehaviour
         nav.OnNavigatorArrived.AddListener(OnEnterNode);
         lastOperation = null;
         anim.StartWalk();
+        transform.Find("conflict").gameObject.SetActive(false);
     }
 
     void OnLeaveRoom(Navigator nav, NavRoom room)
@@ -121,7 +122,7 @@ public class Entity : MonoBehaviour
     }
 
     public void SetConflict(bool conflict) {
-        // TODO
+        transform.Find("conflict").gameObject.SetActive(conflict);
     }
 
     // Update is called once per frame
