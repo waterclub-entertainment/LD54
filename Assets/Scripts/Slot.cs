@@ -2,11 +2,13 @@ using System.Collections;
 using System.Collections.Generic;
 
 using UnityEngine;
+using UnityEngine.UI;
 
 [RequireComponent(typeof(NavNodeSlot))]
 public class Slot : MonoBehaviour
 {
     public Room SpaRoom;
+    public Image progressImage;
 
     SpriteRenderer refSprite;
 
@@ -23,6 +25,7 @@ public class Slot : MonoBehaviour
     {
         refSprite = GetComponentInChildren<SpriteRenderer>();
         refSprite.transform.up = Vector3.up;
+        progressImage.enabled = false;
     }
 
     public void OnSetToken(EntityToken token)
@@ -69,10 +72,16 @@ public class Slot : MonoBehaviour
         if (entity != null && !SpaRoom.HasConflict())
         {
             operating += Time.deltaTime;
+            progressImage.enabled = true;
+            progressImage.fillAmount = 1.0f - (operating / operationTime);
             if (operating > operationTime)
             {
                 CompleteOperation();
             }
+        }
+        else
+        {
+            progressImage.enabled = false;
         }
     }
 
