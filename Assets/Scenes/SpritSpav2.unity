@@ -1285,8 +1285,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -634928093
+  m_SortingLayer: -1
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: abfc346679a894978a45a963c4ed8329, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1328,8 +1328,8 @@ MonoBehaviour:
   - weight: 1
     prefab: {fileID: 8901624723324252157, guid: 19e07372b81512d4dbbed5419e673dc2, type: 3}
   building: {fileID: 1082538722}
-  isSpawning: 0
-  cooldown: 2
+  isSpawning: 1
+  cooldown: 10
 --- !u!114 &1872850052
 MonoBehaviour:
   m_ObjectHideFlags: 0
