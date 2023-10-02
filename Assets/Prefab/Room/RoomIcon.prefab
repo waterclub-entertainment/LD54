@@ -97,5 +97,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59776aaaf928f197eb6e94fb812844d2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  minCameraSize: 15
-  maxCameraSize: 30
+  minCameraSize: 10
+  maxCameraSize: 15

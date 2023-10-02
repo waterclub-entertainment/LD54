@@ -801,6 +801,91 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   peers:
   - {fileID: 117238720}
+--- !u!1001 &715914102
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 717198539}
+    m_Modifications:
+    - target: {fileID: 2810460451874612316, guid: 472e1a3517b0c331c9278b69022d40ae, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 1508658623, guid: fa8a03bc2943b117aa3965142d11376d, type: 3}
+    - target: {fileID: 2810460451874612316, guid: 472e1a3517b0c331c9278b69022d40ae, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2810460451874612316, guid: 472e1a3517b0c331c9278b69022d40ae, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2810460451874612316, guid: 472e1a3517b0c331c9278b69022d40ae, type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5657059040872393518, guid: 472e1a3517b0c331c9278b69022d40ae, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.62063926
+      objectReference: {fileID: 0}
+    - target: {fileID: 5657059040872393518, guid: 472e1a3517b0c331c9278b69022d40ae, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.62063926
+      objectReference: {fileID: 0}
+    - target: {fileID: 5657059040872393518, guid: 472e1a3517b0c331c9278b69022d40ae, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.482557
+      objectReference: {fileID: 0}
+    - target: {fileID: 5657059040872393518, guid: 472e1a3517b0c331c9278b69022d40ae, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.024
+      objectReference: {fileID: 0}
+    - target: {fileID: 5657059040872393518, guid: 472e1a3517b0c331c9278b69022d40ae, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: -0.02
+      objectReference: {fileID: 0}
+    - target: {fileID: 5657059040872393518, guid: 472e1a3517b0c331c9278b69022d40ae, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5657059040872393518, guid: 472e1a3517b0c331c9278b69022d40ae, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5657059040872393518, guid: 472e1a3517b0c331c9278b69022d40ae, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5657059040872393518, guid: 472e1a3517b0c331c9278b69022d40ae, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5657059040872393518, guid: 472e1a3517b0c331c9278b69022d40ae, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5657059040872393518, guid: 472e1a3517b0c331c9278b69022d40ae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5657059040872393518, guid: 472e1a3517b0c331c9278b69022d40ae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5657059040872393518, guid: 472e1a3517b0c331c9278b69022d40ae, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8310473220959797663, guid: 472e1a3517b0c331c9278b69022d40ae, type: 3}
+      propertyPath: m_Name
+      value: RoomIcon
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 472e1a3517b0c331c9278b69022d40ae, type: 3}
 --- !u!1 &717198538
 GameObject:
   m_ObjectHideFlags: 0
@@ -814,7 +899,7 @@ GameObject:
   - component: {fileID: 717198542}
   - component: {fileID: 717198541}
   m_Layer: 0
-  m_Name: Square
+  m_Name: ChangingRoom
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -839,6 +924,7 @@ Transform:
   - {fileID: 1996299890}
   - {fileID: 1006231885}
   - {fileID: 1673995569}
+  - {fileID: 1144498187}
   m_Father: {fileID: 1082538721}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &717198540
@@ -5955,6 +6041,11 @@ MonoBehaviour:
   - {fileID: 1838579030}
   - {fileID: 661407417}
   - {fileID: 117238720}
+--- !u!4 &1144498187 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 5657059040872393518, guid: 472e1a3517b0c331c9278b69022d40ae, type: 3}
+  m_PrefabInstance: {fileID: 715914102}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1352683671
 GameObject:
   m_ObjectHideFlags: 0

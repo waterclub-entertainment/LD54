@@ -56,12 +56,14 @@ public class Navigator : MonoBehaviour
 
     public void StopNavigation()
     {
+        Debug.Log("Stop");
         CancelInvoke("StartNavigation");
         goal = null;
         isGoing = false;
     }
     public void StartNavigation()
     {
+        Debug.Log("Start");
         CancelInvoke("StartNavigation");
         isGoing=true;
         if (goal == null)
@@ -147,8 +149,10 @@ public class Navigator : MonoBehaviour
                     currentNode = goal;
                     OnNavigatorArrived.Invoke(this, goal);
                     goal = null;
-                    StopNavigation();
-                    Invoke("StartNavigation", idleWaitTime);
+                    if (isGoing) {
+                        StopNavigation();
+                        Invoke("StartNavigation", idleWaitTime);
+                    }
                 }
             }
         }
