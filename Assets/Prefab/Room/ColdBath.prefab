@@ -247,7 +247,6 @@ MonoBehaviour:
   peers:
   - {fileID: 1162181736593077701}
   - {fileID: 4399973527043113153}
-  - {fileID: 0}
 --- !u!1 &6335511948233901520
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,7 +478,6 @@ MonoBehaviour:
   peers:
   - {fileID: 1162181736593077701}
   - {fileID: 2982738900567001860}
-  - {fileID: 0}
 --- !u!1 &7977045662044127731
 GameObject:
   m_ObjectHideFlags: 0
@@ -621,8 +619,6 @@ MonoBehaviour:
   peers:
   - {fileID: 778941788689780426}
   - {fileID: 584857285443442140}
-  - {fileID: 0}
-  - {fileID: 0}
 --- !u!1 &9107632798714138492
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,7 +664,6 @@ Transform:
   - {fileID: 1191081787554928822}
   - {fileID: 354829124523004787}
   - {fileID: 1476215200889423471}
-  - {fileID: 5461306915812096319}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3643112626239047996
@@ -708,6 +703,14 @@ PrefabInstance:
       propertyPath: m_Name
       value: Slot
       objectReference: {fileID: 0}
+    - target: {fileID: 6557928447665582944, guid: 208bf34c7d9d0f44b81fbb8bbf7b6220, type: 3}
+      propertyPath: peers.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6557928447665582944, guid: 208bf34c7d9d0f44b81fbb8bbf7b6220, type: 3}
+      propertyPath: peers.Array.data[0]
+      value: 
+      objectReference: {fileID: 5643464333448885196}
     - target: {fileID: 8541704664245611287, guid: 208bf34c7d9d0f44b81fbb8bbf7b6220, type: 3}
       propertyPath: m_LocalPosition.x
       value: -2.61
