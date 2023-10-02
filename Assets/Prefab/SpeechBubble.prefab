@@ -384,6 +384,7 @@ MonoBehaviour:
   normal_bath: {fileID: 650991962, guid: fa8a03bc2943b117aa3965142d11376d, type: 3}
   shower: {fileID: -2013101813, guid: fa8a03bc2943b117aa3965142d11376d, type: 3}
   cold_bath: {fileID: -1792681961, guid: fa8a03bc2943b117aa3965142d11376d, type: 3}
+  hotRoom: {fileID: 1947930603, guid: fa8a03bc2943b117aa3965142d11376d, type: 3}
 --- !u!1 &9144007455217186130
 GameObject:
   m_ObjectHideFlags: 0

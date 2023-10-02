@@ -91,8 +91,13 @@ public class Entity : MonoBehaviour
             speech.SetRoomIcon(op, reaction.forbidden);
             yield return new WaitForSeconds(3f);
             speech.gameObject.SetActive(false);
+        } else if (reaction.hotRoom) {
+            speech.gameObject.SetActive(true);
+            speech.SetHotRoom(reaction.forbidden);
+            yield return new WaitForSeconds(3f);
+            speech.gameObject.SetActive(false);
         } else {
-            // TODO: probably hotRoom == true
+            // TODO: can we get here?
         }
     }
 
