@@ -14,7 +14,7 @@ public class TutorialScript : MonoBehaviour
     [SerializeField]
     private Canvas TutorialCanvas;
     [SerializeField]
-    private GameObject CameraMovement;
+    private GameObject Button;
 
     private string[,] Dialogue = new string[7, 3]
     {
@@ -35,7 +35,6 @@ public class TutorialScript : MonoBehaviour
     {
         if (TutorialCanvas.isActiveAndEnabled)
         {
-            CameraMovement.SetActive(false);
             UpdateText(DialogueLine);
         }
         
@@ -61,11 +60,14 @@ public class TutorialScript : MonoBehaviour
             CharacterName.text = Dialogue[Zeile, 0];
             CharacterText.text = Dialogue[Zeile, 1];
             CharacterResponse.text = Dialogue[Zeile, 2];
+            if (Zeile == Dialogue.GetLength(0) - 1)
+            {
+                Button.SetActive(false);
+            }
         }
         else
         {
-            TutorialCanvas.enabled = false;
-            CameraMovement.SetActive(true);
+            Button.SetActive(false);
         }
             
         

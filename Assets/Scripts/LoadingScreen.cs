@@ -9,6 +9,7 @@ public class LoadingScreen : MonoBehaviour
 {
     public GameObject LoadingScreenCanvas;
     public int WaitTime;
+    public int SceneID;
 
     public void LoadScene(int sceneID)
     {
