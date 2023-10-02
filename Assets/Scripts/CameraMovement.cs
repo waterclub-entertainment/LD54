@@ -11,6 +11,8 @@ public class CameraMovement : MonoBehaviour
     public float panThreshold = 0.1f;
     public float scrollSpeed;
 
+    public float xRange, yRange;
+
     public float zoomStep, minCameraSize, maxCameraSize;
 
     private void Update()
@@ -46,5 +48,9 @@ public class CameraMovement : MonoBehaviour
         {
             cam.transform.position += Vector3.up * Time.deltaTime * scrollSpeed;
         }
+        Vector3 pos = cam.transform.position;
+        pos.x = Mathf.Clamp(pos.x, -xRange, xRange);
+        pos.y = Mathf.Clamp(pos.y, -yRange, yRange);
+        cam.transform.position = pos;
     }
 }

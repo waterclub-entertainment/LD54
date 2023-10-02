@@ -288,6 +288,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8525149953230259628}
   - component: {fileID: 4329933989172180481}
+  - component: {fileID: 676955966795418055}
   m_Layer: 0
   m_Name: Outside Bath Decal
   m_TagString: Untagged
@@ -330,7 +331,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: -876546973899608171, guid: 9fbf9867e0cf69b4fabb9af031826661, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -362,6 +363,20 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &676955966795418055
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2650474339146259466}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 87f9ea6225bfed147b6f7266fb9d4146, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ColorA: {r: 1, g: 0.6915728, b: 0.4764151, a: 1}
+  ColorB: {r: 1, g: 0.9993181, b: 0.6933962, a: 1}
 --- !u!1 &3429265638620218378
 GameObject:
   m_ObjectHideFlags: 0
