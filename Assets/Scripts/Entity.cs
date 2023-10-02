@@ -9,6 +9,7 @@ public class Entity : MonoBehaviour
     private Navigator nav;
     private AnimationHook anim;
     private Enums.Operation? lastOperation;
+    private MoodParticles moodParticles;
 
     public Enums.Species Species;
 
@@ -22,6 +23,8 @@ public class Entity : MonoBehaviour
     void Start()
     {
         anim = GetComponentInChildren<AnimationHook>();
+        moodParticles = GetComponentInChildren<MoodParticles>();
+        moodParticles.SetMood(moodLevel);
         nav = GetComponent<Navigator>();
         nav.OnEnterRoom.AddListener(OnEnterRoom);
         nav.OnLeaveRoom.AddListener(OnLeaveRoom);
@@ -55,6 +58,7 @@ public class Entity : MonoBehaviour
         Debug.Log("Applied " + op.ToString());
         lastOperation = op;
         mood += 1;
+        moodParticles.SetMood(moodLevel);
         if (moodLevel == Enums.Mood.ASCENDED) {
             // TODO: Despawn
             Destroy(gameObject);
