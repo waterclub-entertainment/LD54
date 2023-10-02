@@ -107,6 +107,17 @@ public class Entity : MonoBehaviour
             return reaction;
         }
 
+        //Cannot repeat same action
+        if (op == lastOperation)
+        {
+            Reaction reaction;
+            reaction.room = op;
+            reaction.hotRoom = false;
+            reaction.forbidden = true;
+            Refusal.Play();
+            return reaction;
+        }
+
         // Has to dress last
         // TODO: Check energy
         if (op == Enums.Operation.EXIT && lastOperation != Enums.Operation.CHANGING_ROOM) {
