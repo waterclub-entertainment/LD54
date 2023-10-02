@@ -28,6 +28,7 @@ public class Speech : MonoBehaviour {
     public Sprite normal_bath;
     public Sprite shower;
     public Sprite cold_bath;
+    public Sprite hotRoom;
 
 	public void SetSpirit(Enums.Species species, bool negate) {
 		roomIconImage.gameObject.SetActive(false);
@@ -97,6 +98,13 @@ public class Speech : MonoBehaviour {
 				roomIconImage.sprite = cold_bath;
 				break;
 		}
+	}
+
+	public void SetHotRoom(bool negate) {
+		spiritImage.gameObject.SetActive(false);
+		roomIconImage.gameObject.SetActive(true);
+		cross.gameObject.SetActive(negate);
+		roomIconImage.sprite = hotRoom;
 	}
 
 }

@@ -257,7 +257,7 @@ TextureImporter:
       edges: []
       weights: []
     - serializedVersion: 2
-      name: room_icon_7
+      name: hot_room
       rect:
         serializedVersion: 2
         x: 768
@@ -459,9 +459,9 @@ TextureImporter:
       changing_room: 1508658623
       cold_bath: -1792681961
       exit: -1220339446
+      hot_room: 1947930603
       hot_spring: 276533364
       normal_bath: 650991962
-      room_icon_7: 1947930603
       room_icons_10: -1107021794
       room_icons_11: 1671872068
       room_icons_12: -1456441922
