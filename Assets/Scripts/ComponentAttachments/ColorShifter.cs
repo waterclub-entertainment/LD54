@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(SpriteRenderer))]
 public class ColorShifter : MonoBehaviour
 {
-    SpriteRenderer renderer;
+    SpriteRenderer r;
     MaterialPropertyBlock blk;
     public Color ColorA, ColorB;
 
@@ -16,8 +16,8 @@ public class ColorShifter : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        renderer = GetComponent<SpriteRenderer>();
-        renderer.GetPropertyBlock(blk);
+        r = GetComponent<SpriteRenderer>();
+        r.GetPropertyBlock(blk);
     }
 
     // Update is called once per frame
@@ -25,10 +25,10 @@ public class ColorShifter : MonoBehaviour
     {
         if (blk == null)
             return;
-        renderer.GetPropertyBlock(blk, 0);
-        blk.SetTexture("_MainTex", renderer.sprite.texture);
+        r.GetPropertyBlock(blk, 0);
+        blk.SetTexture("_MainTex", r.sprite.texture);
         blk.SetColor("_ColorA", ColorA);
         blk.SetColor("_ColorB", ColorB);
-        renderer.SetPropertyBlock(blk, 0);
+        r.SetPropertyBlock(blk, 0);
     }
 }
