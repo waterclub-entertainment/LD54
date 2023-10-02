@@ -49,6 +49,7 @@ public class Slot : MonoBehaviour
     public void RemoveToken()
     {
         token = null;
+        SpaRoom.LeaveRoom(token.Parent);
         if (entity != null)
         {
             SpaRoom.LeaveRoom(entity);
@@ -59,7 +60,6 @@ public class Slot : MonoBehaviour
 
     public void CompleteOperation()
     {
-        SpaRoom.LeaveRoom(entity);
         entity.ApplyTreatment(appliedTreatment);
         entity.Navigate.StartNavigation();
         token.OnCompleteOperation();
