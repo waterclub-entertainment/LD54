@@ -20,9 +20,13 @@ public class Spawn : MonoBehaviour
 
     public bool isSpawning;
     public float cooldown;
+    public float cooldownPull = 0.5f;
+
     private float spawnCount;
 
     private int totalSpawnWeight;
+
+    private float averageSpawnMood;
 
     private GameObject getRandomSpawn()
     {
@@ -41,12 +45,24 @@ public class Spawn : MonoBehaviour
     void Start()
     {
         own = GetComponent<NavNodeInterface>();
+        spawnCount = cooldown;
+        RecalculateWeights();
+    }
+
+    public void OnPlayerAction() {
+        spawnCount += cooldown / averageSpawnMood * (1f - cooldownPull);
+        Debug.Log("Action test");
+    }
+
+    public void RecalculateWeights() {
         totalSpawnWeight = 0;
+        averageSpawnMood = 0;
         foreach (var s in Spawns)
         {
             totalSpawnWeight += s.weight;
+            averageSpawnMood += (float) s.prefab.GetComponent<Entity>().mood * s.weight;
         }
-        spawnCount = cooldown;
+        averageSpawnMood /= totalSpawnWeight;
     }
 
     // Update is called once per frame
@@ -62,6 +78,6 @@ public class Spawn : MonoBehaviour
 
             spawnCount = 0;
         }
-        spawnCount += Time.deltaTime;
+        spawnCount += cooldownPull * Time.deltaTime;
     }
 }
