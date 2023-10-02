@@ -10,11 +10,23 @@ public class ScoreEnabler : MonoBehaviour
 
     private void Start()
     {
-        gameObject.SetActive(false);
+        for (int i = 0; i < transform.childCount; i++)
+        {
+            if (transform.GetChild(i).gameObject.tag != "Hint")
+                transform.GetChild(i).gameObject.SetActive(false);
+            else
+                transform.GetChild(i).gameObject.SetActive(true);
+        }
     }
 
     public void OnScoreChanged(ScoreKeeper keeper)
     {
-        gameObject.SetActive(keeper.GetScore(species) >= count);
+        for(int i = 0; i < transform.childCount; i++)
+        {
+            if (transform.GetChild(i).gameObject.tag != "Hint")
+                transform.GetChild(i).gameObject.SetActive(keeper.GetScore(species) >= count);
+            else
+                transform.GetChild(i).gameObject.SetActive(keeper.GetScore(species) < count);
+        }
     }
 }
