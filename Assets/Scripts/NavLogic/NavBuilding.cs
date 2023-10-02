@@ -29,8 +29,8 @@ public class NavBuilding : MonoBehaviour
         {
             if (a.Direction == b.Direction)
             {
-                var aNode = a.GlobalPosition + a.Direction;
-                var bNode = b.GlobalPosition + b.Direction;
+                var aNode = a.GlobalPosition + a.Direction * 2f;
+                var bNode = b.GlobalPosition + b.Direction * 2f;
                 if (a.Direction.x > a.Direction.y)
                 {
                     aNode.y = bNode.y = Mathf.Max(aNode.y, bNode.y);
