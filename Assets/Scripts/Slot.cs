@@ -64,7 +64,6 @@ public class Slot : MonoBehaviour
         entity.Navigate.StartNavigation();
         token.OnCompleteOperation();
         entity = null;
-        token = null;
     }
 
     public void StopHovered()
