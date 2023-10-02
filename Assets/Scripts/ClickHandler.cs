@@ -77,6 +77,9 @@ public class ClickHandler : MonoBehaviour
                         currentHighlighted.transform.SetParent(hitInfo.transform);
                         currentHighlighted.transform.localPosition = Vector3.zero;
                         currentHighlighted = null;
+                        foreach (Spawn spawn in GameObject.FindObjectsOfType<Spawn>()) {
+                            spawn.OnPlayerAction();
+                        }
                     }
                 }
             }
