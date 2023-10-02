@@ -150,9 +150,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f3e8f31922b09d24fb92c986f728369c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  peers:
-  - {fileID: 0}
-  Tag: SAUNA
+  peers: []
 --- !u!114 &8942132746722552582
 MonoBehaviour:
   m_ObjectHideFlags: 0

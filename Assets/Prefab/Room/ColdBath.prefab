@@ -44,8 +44,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6adcec072fc55f4fa5b9f1556625d87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  peers:
-  - {fileID: 0}
+  peers: []
 --- !u!1 &392273974325089364
 GameObject:
   m_ObjectHideFlags: 0
@@ -341,8 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6adcec072fc55f4fa5b9f1556625d87, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  peers:
-  - {fileID: 0}
+  peers: []
 --- !u!1 &6428072623161243838
 GameObject:
   m_ObjectHideFlags: 0
@@ -602,8 +600,8 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7977045662044127731}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: -0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: -0.18, y: -4.7, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0.7071068, w: 0.7071068}
+  m_LocalPosition: {x: -0.1800003, y: -4.7, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -716,7 +714,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   peers:
-  - {fileID: 0}
   - {fileID: 778941788689780426}
   - {fileID: 584857285443442140}
   - {fileID: 6027050297558287634}
@@ -887,6 +884,10 @@ PrefabInstance:
     - target: {fileID: 4251682679261963341, guid: 208bf34c7d9d0f44b81fbb8bbf7b6220, type: 3}
       propertyPath: m_Name
       value: Slot (4)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6557928447665582944, guid: 208bf34c7d9d0f44b81fbb8bbf7b6220, type: 3}
+      propertyPath: peers.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8541704664245611287, guid: 208bf34c7d9d0f44b81fbb8bbf7b6220, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1118,6 +1119,10 @@ PrefabInstance:
     - target: {fileID: 4251682679261963341, guid: 208bf34c7d9d0f44b81fbb8bbf7b6220, type: 3}
       propertyPath: m_Name
       value: Slot (3)
+      objectReference: {fileID: 0}
+    - target: {fileID: 6557928447665582944, guid: 208bf34c7d9d0f44b81fbb8bbf7b6220, type: 3}
+      propertyPath: peers.Array.size
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8541704664245611287, guid: 208bf34c7d9d0f44b81fbb8bbf7b6220, type: 3}
       propertyPath: m_LocalPosition.x

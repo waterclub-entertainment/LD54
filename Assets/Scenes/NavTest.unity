@@ -627,8 +627,8 @@ MonoBehaviour:
   cam: {fileID: 416848188}
   panThreshold: 0.027
   scrollSpeed: 8
-  xRange: 0
-  yRange: 0
+  xRange: 10
+  yRange: 15
   zoomStep: 30
   minCameraSize: 3
   maxCameraSize: 93
@@ -749,7 +749,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00456025958fa674bb8840aa31a61630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  peers: []
+  peers:
+  - {fileID: 117238720}
 --- !u!114 &777749844 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 7437993680336515390, guid: 3b65c7bd8226d79438cb0c48d59ccef4, type: 3}
@@ -1007,7 +1008,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00456025958fa674bb8840aa31a61630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  peers: []
+  peers:
+  - {fileID: 1838579030}
+  - {fileID: 661407417}
+  - {fileID: 117238720}
 --- !u!1001 &1376839104
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1094,6 +1098,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1082538721}
     m_Modifications:
+    - target: {fileID: 2834862183261758084, guid: 3b65c7bd8226d79438cb0c48d59ccef4, type: 3}
+      propertyPath: peers.Array.size
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 5610472158942399225, guid: 3b65c7bd8226d79438cb0c48d59ccef4, type: 3}
       propertyPath: m_LocalPosition.x
       value: -15.468012
@@ -1287,7 +1295,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 00456025958fa674bb8840aa31a61630, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  peers: []
+  peers:
+  - {fileID: 661407417}
+  - {fileID: 117238720}
 --- !u!1 &1872850049 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5480742425858013810, guid: d843a92865f1dea42bb20349f664c21d, type: 3}
@@ -1308,7 +1318,7 @@ MonoBehaviour:
   Spawns:
   - weight: 1
     prefab: {fileID: 3251320290774989856, guid: 017a26be56a413f42aa03f43df46c8f9, type: 3}
-  - weight: 100000
+  - weight: 1
     prefab: {fileID: 1954657351890056871, guid: 7b28c4c0ec8630d4d921c968d328dcdd, type: 3}
   - weight: 1
     prefab: {fileID: 3966552800215005600, guid: c12b9a7119df4e14aa516a615343aebb, type: 3}
