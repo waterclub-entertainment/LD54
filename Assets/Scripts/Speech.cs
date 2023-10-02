@@ -20,7 +20,6 @@ public class Speech : MonoBehaviour {
 	public Texture mantis;
 
 	[Header("Room icons")]
-    public Sprite steam_bath;
     public Sprite changing_room;
     public Sprite exit;
     public Sprite sauna;
@@ -73,9 +72,6 @@ public class Speech : MonoBehaviour {
 		roomIconImage.gameObject.SetActive(true);
 		cross.gameObject.SetActive(negate);
 		switch (op) {
-	        case Enums.Operation.STEAM_BATH:
-				roomIconImage.sprite = steam_bath;
-				break;
 	        case Enums.Operation.CHANGING_ROOM:
 				roomIconImage.sprite = changing_room;
 				break;
