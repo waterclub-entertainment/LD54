@@ -1,12 +1,16 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.Animations;
 using UnityEngine;
 
-[RequireComponent(typeof(Renderer))]
+[RequireComponent(typeof(SpriteRenderer))]
 public class WaterConfig : MonoBehaviour
 {
-    Renderer r;
+    SpriteRenderer r;
     MaterialPropertyBlock blk;
+
+    public Vector2 BackgroundSize;
+    public Vector2 BackgroundOffset;
 
     public Color BaseColor;
     public Color RippleColor;
@@ -23,7 +27,7 @@ public class WaterConfig : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        r = GetComponent<Renderer>();
+        r = GetComponent<SpriteRenderer>();
         blk = new MaterialPropertyBlock();
         r.GetPropertyBlock(blk);
     }
@@ -32,9 +36,12 @@ public class WaterConfig : MonoBehaviour
     void Update()
     {
         r.GetPropertyBlock(blk, 0);
-        blk.SetColor("_BaseColor", BaseColor);
+        blk.SetTexture("_MainTex", r.sprite.texture);
+        blk.SetVector("_BGSize", BackgroundSize);
+        blk.SetVector("_BGOffset", BackgroundOffset);
+        blk.SetColor("_WaterColor", BaseColor);
         blk.SetColor("_RippleColor", RippleColor);
-        blk.SetFloat("_Alpha", Alpha);
+        blk.SetFloat("_WaterAlpha", Alpha);
         blk.SetFloat("_Speed", Speed);
         blk.SetFloat("_NoiseSpeed", NoiseSpeed);
         blk.SetFloat("_RippleIntensity", RippleIntensity);
