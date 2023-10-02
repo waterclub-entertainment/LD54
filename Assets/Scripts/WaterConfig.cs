@@ -4,6 +4,7 @@ using UnityEditor.Animations;
 using UnityEngine;
 
 [RequireComponent(typeof(SpriteRenderer))]
+[ExecuteInEditMode]
 public class WaterConfig : MonoBehaviour
 {
     SpriteRenderer r;
