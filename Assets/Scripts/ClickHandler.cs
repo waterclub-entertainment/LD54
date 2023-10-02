@@ -32,10 +32,9 @@ public class ClickHandler : MonoBehaviour
                 currentHighlighted.GetComponent<EntityToken>().OnStartDrag();
             }
         }
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && currentHighlighted != null)
         {
-            if (currentHighlighted != null)
-                currentHighlighted.transform.position = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -cam.transform.position.z));
+            currentHighlighted.transform.position = cam.ScreenToWorldPoint(new Vector3(Input.mousePosition.x, Input.mousePosition.y, -cam.transform.position.z));
             RaycastHit hitInfo = new RaycastHit();
             bool hit = Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out hitInfo, Mathf.Infinity, SlotLayerMask);
             if (hit)
