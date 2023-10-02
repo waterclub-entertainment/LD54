@@ -46,6 +46,7 @@ public class Spawn : MonoBehaviour
         {
             totalSpawnWeight += s.weight;
         }
+        spawnCount = cooldown;
     }
 
     // Update is called once per frame
