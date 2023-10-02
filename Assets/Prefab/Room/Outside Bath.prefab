@@ -108,6 +108,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8681673745845779023}
   - component: {fileID: 6102283063798380986}
+  - component: {fileID: 653760068201869969}
   m_Layer: 0
   m_Name: Outside Bath
   m_TagString: Untagged
@@ -151,7 +152,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 0f01a3c2ae0bf1940afcbfdc1eddd23f, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -183,6 +184,29 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &653760068201869969
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2215419335920635733}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cefbc8df84bfdfb4db26e9887d699b95, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Mask: {fileID: 21300000, guid: f7675627f0a244f4e87693f323e97552, type: 3}
+  BackgroundSize: {x: 0, y: 0}
+  BackgroundOffset: {x: 0, y: 0}
+  BaseColor: {r: 0.34049988, g: 0.25, b: 1, a: 0}
+  RippleColor: {r: 1, g: 0.8634645, b: 0.7122642, a: 0}
+  Alpha: 0.798
+  Speed: 2
+  NoiseSpeed: 1
+  RippleIntensity: 1
+  DisolveStrengh: 3
+  NormalNoiseRatio: 0.58
 --- !u!1 &2226641849973731063
 GameObject:
   m_ObjectHideFlags: 0

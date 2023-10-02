@@ -10,6 +10,8 @@ public class WaterConfig : MonoBehaviour
     SpriteRenderer r;
     MaterialPropertyBlock blk;
 
+    public Sprite Mask;
+
     public Vector2 BackgroundSize;
     public Vector2 BackgroundOffset;
 
@@ -43,6 +45,11 @@ public class WaterConfig : MonoBehaviour
             return;
         r.GetPropertyBlock(blk, 0);
         blk.SetTexture("_MainTex", r.sprite.texture);
+        if (Mask == null)
+            blk.SetTexture("_Mask", r.sprite.texture);
+        else
+            blk.SetTexture("_Mask", Mask.texture);
+        blk.SetInt("_HasMask", Mask == null ? 0 : 1);
         blk.SetVector("_BGSize", BackgroundSize);
         blk.SetVector("_BGOffset", BackgroundOffset);
         blk.SetColor("_WaterColor", BaseColor);
