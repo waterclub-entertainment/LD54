@@ -388,6 +388,7 @@ Transform:
   - {fileID: 1352938621916999414}
   - {fileID: 4596787555502493970}
   - {fileID: 8407751410726930263}
+  - {fileID: 5482746210671090535}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &6082035089208430753
@@ -2126,6 +2127,68 @@ MonoBehaviour:
     m_Extent: {x: 3.7800236, y: 3.8253293, z: 0}
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
+--- !u!1001 &3111960055144894066
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 1234298124720000224}
+    m_Modifications:
+    - target: {fileID: 7438054941546419477, guid: b49a7afe4a1c2552395a629cce65ac46, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438054941546419477, guid: b49a7afe4a1c2552395a629cce65ac46, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438054941546419477, guid: b49a7afe4a1c2552395a629cce65ac46, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438054941546419477, guid: b49a7afe4a1c2552395a629cce65ac46, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438054941546419477, guid: b49a7afe4a1c2552395a629cce65ac46, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438054941546419477, guid: b49a7afe4a1c2552395a629cce65ac46, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438054941546419477, guid: b49a7afe4a1c2552395a629cce65ac46, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438054941546419477, guid: b49a7afe4a1c2552395a629cce65ac46, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438054941546419477, guid: b49a7afe4a1c2552395a629cce65ac46, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7438054941546419477, guid: b49a7afe4a1c2552395a629cce65ac46, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8343029568464226408, guid: b49a7afe4a1c2552395a629cce65ac46, type: 3}
+      propertyPath: m_Name
+      value: Mood Particles
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: b49a7afe4a1c2552395a629cce65ac46, type: 3}
+--- !u!4 &5482746210671090535 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 7438054941546419477, guid: b49a7afe4a1c2552395a629cce65ac46, type: 3}
+  m_PrefabInstance: {fileID: 3111960055144894066}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5127011312383024794
 PrefabInstance:
   m_ObjectHideFlags: 0

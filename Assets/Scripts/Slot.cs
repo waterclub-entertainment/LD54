@@ -36,6 +36,7 @@ public class Slot : MonoBehaviour
     public void OnEntityArrived(Entity e)
     {
         if (entity == null && token != null && token.IsMatchingEntity(e)) {
+            SpaRoom.EnterRoom(e);
             entity = e;
             e.Navigate.StopNavigation();
             operating = 0;
@@ -49,6 +50,7 @@ public class Slot : MonoBehaviour
 
     public void CompleteOperation()
     {
+        SpaRoom.LeaveRoom(entity);
         entity.ApplyTreatment(appliedTreatment);
         entity.Navigate.StartNavigation();
         token.OnCompleteOperation();
@@ -82,6 +84,7 @@ public class Slot : MonoBehaviour
                 }
             } else {
                 if (SpaRoom.IsConflicting(entity.Species)) {
+                    Debug.Log("Conflicting: " + entity.Species);
                     entity.SetConflict(true);
                 } else {
                     entity.SetConflict(false);
