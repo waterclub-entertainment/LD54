@@ -11,6 +11,9 @@ public class Entity : MonoBehaviour
     private Enums.Operation? lastOperation;
     private MoodParticles moodParticles;
 
+    public AudioSource Walking;
+    public AudioSource Refusal;
+
     public Enums.Species Species;
 
     public int mood;
@@ -50,6 +53,7 @@ public class Entity : MonoBehaviour
             var slt = n.GetComponent<Slot>();
             slt.OnEntityArrived(this);
             anim.StopWalk();
+            Walking.Stop();
         }
     }
 
@@ -65,6 +69,7 @@ public class Entity : MonoBehaviour
             Destroy(gameObject);
         }
         anim.StartWalk();
+        Walking.Play();
     }
 
     public bool ApproachToken(NavNode slot)
@@ -98,6 +103,7 @@ public class Entity : MonoBehaviour
             reaction.room = Enums.Operation.CHANGING_ROOM;
             reaction.hotRoom = false;
             reaction.forbidden = false;
+            Refusal.Play();
             return reaction;
         }
 
@@ -108,6 +114,7 @@ public class Entity : MonoBehaviour
             reaction.room = Enums.Operation.CHANGING_ROOM;
             reaction.hotRoom = false;
             reaction.forbidden = false;
+            Refusal.Play();
             return reaction;
         }
 
@@ -117,6 +124,7 @@ public class Entity : MonoBehaviour
             reaction.room = null;
             reaction.hotRoom = true;
             reaction.forbidden = false;
+            Refusal.Play();
             return reaction;
         }
 
@@ -126,6 +134,7 @@ public class Entity : MonoBehaviour
             reaction.room = null;
             reaction.hotRoom = true;
             reaction.forbidden = true;
+            Refusal.Play();
             return reaction;
         }
 
