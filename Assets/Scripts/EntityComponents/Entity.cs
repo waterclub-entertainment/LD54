@@ -60,6 +60,7 @@ public class Entity : MonoBehaviour
         mood += 1;
         moodParticles.SetMood(moodLevel);
         if (moodLevel == Enums.Mood.ASCENDED) {
+            ScoreKeeper.mainKeeper.AddToScore(Species);
             // TODO: Despawn
             Destroy(gameObject);
         }

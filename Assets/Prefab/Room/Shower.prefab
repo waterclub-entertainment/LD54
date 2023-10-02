@@ -350,12 +350,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6557928447665582944, guid: 208bf34c7d9d0f44b81fbb8bbf7b6220, type: 3}
       propertyPath: peers.Array.size
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6557928447665582944, guid: 208bf34c7d9d0f44b81fbb8bbf7b6220, type: 3}
+      propertyPath: peers.Array.data[0]
+      value: 
+      objectReference: {fileID: 3716032271532068209}
     - target: {fileID: 6557928447665582944, guid: 208bf34c7d9d0f44b81fbb8bbf7b6220, type: 3}
       propertyPath: peers.Array.data[1]
       value: 
-      objectReference: {fileID: 3716032271532068209}
+      objectReference: {fileID: 0}
     - target: {fileID: 8541704664245611287, guid: 208bf34c7d9d0f44b81fbb8bbf7b6220, type: 3}
       propertyPath: m_LocalPosition.x
       value: -4.828808

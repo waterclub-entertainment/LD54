@@ -110,7 +110,7 @@ public class NavBuilding : MonoBehaviour
     {
         float minDist = 99999f;
         
-        if (current == null || goal == null)
+        if (current == null || goal == null || !current.gameObject.activeSelf)
             return minDist;
         visited.Add(current);
 
