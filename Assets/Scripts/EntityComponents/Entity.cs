@@ -91,8 +91,13 @@ public class Entity : MonoBehaviour
             speech.SetRoomIcon(op, reaction.forbidden);
             yield return new WaitForSeconds(3f);
             speech.gameObject.SetActive(false);
+        } else if (reaction.hotRoom) {
+            speech.gameObject.SetActive(true);
+            speech.SetHotRoom(reaction.forbidden);
+            yield return new WaitForSeconds(3f);
+            speech.gameObject.SetActive(false);
         } else {
-            // TODO: probably hotRoom == true
+            // TODO: can we get here?
         }
     }
 
@@ -103,6 +108,17 @@ public class Entity : MonoBehaviour
             reaction.room = Enums.Operation.CHANGING_ROOM;
             reaction.hotRoom = false;
             reaction.forbidden = false;
+            Refusal.Play();
+            return reaction;
+        }
+
+        //Cannot repeat same action
+        if (op == lastOperation)
+        {
+            Reaction reaction;
+            reaction.room = op;
+            reaction.hotRoom = false;
+            reaction.forbidden = true;
             Refusal.Play();
             return reaction;
         }
