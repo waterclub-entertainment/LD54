@@ -34,8 +34,12 @@ public class TutorialScript : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        CameraMovement.SetActive(false);
-        UpdateText(DialogueLine);
+        if (TutorialCanvas.isActiveAndEnabled)
+        {
+            CameraMovement.SetActive(false);
+            UpdateText(DialogueLine);
+        }
+        
     }
 
     public void OnButtonClick()
