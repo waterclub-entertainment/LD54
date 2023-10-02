@@ -35,7 +35,11 @@ namespace Enums
 
     public enum Mood //TODO
     {
-        NONE
+        PISSED,
+        UNHAPPY,
+        NEUTRAL,
+        HAPPY,
+        ASCENDED
     }
 }
 
@@ -45,7 +49,20 @@ namespace Helper
     {
         public static Mood GetMood(int moodLevel)
         {
-            return Mood.NONE; //TODO
+            if (moodLevel >= 0) {
+                return Mood.ASCENDED;
+            } else if (moodLevel >= -3) {
+                return Mood.HAPPY;
+            } else if (moodLevel >= -5) {
+                return Mood.NEUTRAL;
+            } else if (moodLevel >= -8) {
+                return Mood.UNHAPPY;
+            } else if (moodLevel >= -10) {
+                return Mood.PISSED;
+            } else {
+                Debug.LogError("THIS SHOULDNT HAPPEN");
+                return Mood.ASCENDED;
+            }
         }
 
         public static bool IsOperationHot(Operation? op) {

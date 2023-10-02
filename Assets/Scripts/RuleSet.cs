@@ -16,13 +16,16 @@ public class RuleSet : ScriptableObject
     public List<SpeciesTuple> Blacklist;
 
 
-    public bool Check(int[] speciesCounts)
+    public Dictionary<Enums.Species, Enums.Species> Check(int[] speciesCounts)
     {
+        Dictionary<Enums.Species, Enums.Species> conflictingSpecies = new Dictionary<Enums.Species, Enums.Species>();
         foreach(SpeciesTuple s in Blacklist)
         {
-            if (speciesCounts[(int)s.sp1] > 0 && speciesCounts[(int)s.sp2] > 0)
-                return false;
+            if (speciesCounts[(int)s.sp1] > 0 && speciesCounts[(int)s.sp2] > 0) {
+                conflictingSpecies[s.sp1] = s.sp2;
+                conflictingSpecies[s.sp2] = s.sp1;
+            }
         }
-        return true;
+        return conflictingSpecies;
     }
 }

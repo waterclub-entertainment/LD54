@@ -17,6 +17,25 @@ public class Navigator : MonoBehaviour
     private NavRoom currentRoom = null;
     public bool isGoing;
 
+    public Vector2 Heading
+    {
+        get
+        {
+            if (positionSeries.Count() > 0)
+            {
+                return transform.position - positionSeries[0].transform.position;
+            }
+            else if (goal != null)
+            {
+                return transform.position - goal.transform.position;
+            }
+            else
+            {
+                return Vector2.right;
+            }
+        }
+    }
+
     private List<NavNode> positionSeries = new List<NavNode>();
 
     [HideInInspector]

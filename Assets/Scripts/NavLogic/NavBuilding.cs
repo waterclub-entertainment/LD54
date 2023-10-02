@@ -2,6 +2,9 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
+using Unity.Mathematics;
+using UnityEditor;
 using UnityEditor.Experimental.GraphView;
 using UnityEngine;
 
@@ -12,8 +15,8 @@ public class NavBuilding : MonoBehaviour
     [Serializable]
     public class NavLink
     {
-        public NavRoom roomA;
-        public NavRoom roomB;
+        public NavNodeInterface roomA;
+        public NavNodeInterface roomB;
     }
 
     public List<NavLink> connections;
@@ -26,8 +29,40 @@ public class NavBuilding : MonoBehaviour
 
         if (!xAligned && !yAligned)
         {
-            if (Vector2.Dot(delta, a.Direction) >= 0 && Vector2.Dot(delta, b.Direction) <= 0) //check if on the correct side
+            if (a.Direction == b.Direction)
             {
+                var aNode = a.GlobalPosition + a.Direction;
+                var bNode = b.GlobalPosition + b.Direction;
+                if (a.Direction.x > a.Direction.y)
+                {
+                    aNode.y = bNode.y = Mathf.Max(aNode.y, bNode.y);
+                }
+                else
+                {
+                    aNode.x = bNode.x = Mathf.Max(aNode.x, bNode.x);
+                }
+                NavNode navA = null, navB = null;
+                var newNavNode = new GameObject();
+                newNavNode.transform.SetParent(transform);
+                newNavNode.transform.position = aNode;
+                navA = newNavNode.AddComponent<NavNode>();
+                newNavNode = new GameObject();
+                newNavNode.transform.SetParent(transform);
+                newNavNode.transform.position = bNode;
+                navB = newNavNode.AddComponent<NavNode>();
+
+                a.AddExternalPeer(navA);
+                navA.AddPeer(navB);
+                b.AddExternalPeer(navB);
+            }
+            else if (a.Direction == -b.Direction)
+            {
+                if (Vector2.Dot(delta, a.Direction) < 0 || Vector2.Dot(delta, b.Direction) > 0) //check if on the correct side
+                {
+                    var tmp = b;
+                    b = a;
+                    a = tmp;
+                }
                 NavNode navA = null, navB = null;
                 if (a.Direction.x < a.Direction.y)
                 {
@@ -61,7 +96,7 @@ public class NavBuilding : MonoBehaviour
             }
             else
             {
-                throw new System.Exception("This would require complex pathfinding. This is not happening");
+                Debug.Log("Single Corner");
             }
         }
         else
@@ -116,25 +151,7 @@ public class NavBuilding : MonoBehaviour
 
         foreach (var con in connections)
         {
-            //find closest pair of interfaces
-            NavNodeInterface a = null, b = null;
-            float lastDist = 99999999;
-            foreach(var i in con.roomA.FreeInterfaces)
-            {
-                if (a == null)
-                    a = i;
-                foreach (var j in con.roomB.FreeInterfaces)
-                {
-                    if (b == null)
-                        b = j;
-                    if (lastDist > (i.GlobalPosition - j.GlobalPosition).sqrMagnitude)
-                    {
-                        a = i; b = j;
-                        lastDist = (i.GlobalPosition - j.GlobalPosition).sqrMagnitude;
-                    }
-                }
-            }
-            BuildNavGraphConnection(a, b);
+            BuildNavGraphConnection(con.roomA, con.roomB);
         }
     }
 

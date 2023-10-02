@@ -38,6 +38,15 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Rooms
+    uniqueID: 3660039203
+    locked: 0
+  - name: Mood Particles
+    uniqueID: 923858403
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Creatures
+    uniqueID: 201283015
     locked: 0
