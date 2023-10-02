@@ -10,6 +10,8 @@ public class EntityToken : MonoBehaviour, IToken
     Transform currentParent;
     Renderer renderHandler;
 
+    public Entity Parent { get { return parent; } }
+
     // Start is called before the first frame update
     void Start()
     {
