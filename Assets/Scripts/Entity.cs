@@ -33,11 +33,11 @@ public class Entity : MonoBehaviour
 
     void OnLeaveRoom(Navigator nav, NavRoom room)
     {
-        room.Room.LeaveRoom(this);
+        // room.Room.LeaveRoom(this);
     }
     void OnEnterRoom(Navigator nav, NavRoom room)
     {
-        room.Room.EnterRoom(this);
+        // room.Room.EnterRoom(this);
     }
 
     void OnEnterNode(Navigator nav, NavNode n)

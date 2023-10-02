@@ -21,9 +21,10 @@ public class RuleSet : ScriptableObject
         HashSet<Enums.Species> conflictingSpecies = new HashSet<Enums.Species>();
         foreach(SpeciesTuple s in Blacklist)
         {
-            if (speciesCounts[(int)s.sp1] > 0 && speciesCounts[(int)s.sp2] > 0)
+            if (speciesCounts[(int)s.sp1] > 0 && speciesCounts[(int)s.sp2] > 0) {
                 conflictingSpecies.Add(s.sp1);
                 conflictingSpecies.Add(s.sp2);
+            }
         }
         return conflictingSpecies;
     }
