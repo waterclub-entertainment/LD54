@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 7438054941546419477}
   - component: {fileID: 4978925231950424845}
   - component: {fileID: 4608711298233033927}
+  - component: {fileID: 6366400365088497630}
   m_Layer: 0
   m_Name: Mood Particles
   m_TagString: Untagged
@@ -4777,7 +4778,7 @@ ParticleSystemRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 4d74c0e95cdc096099b6b0b368ba415b, type: 2}
+  - {fileID: 2100000, guid: 940b9f375ca45b945ab24cf12ae84370, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -4828,3 +4829,19 @@ ParticleSystemRenderer:
   m_MeshWeighting2: 1
   m_MeshWeighting3: 1
   m_MaskInteraction: 0
+--- !u!114 &6366400365088497630
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8343029568464226408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 57a5c6ca474be8aff9f536089e107028, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  happyMaterial: {fileID: 2100000, guid: 4d74c0e95cdc096099b6b0b368ba415b, type: 2}
+  neutralMaterial: {fileID: 2100000, guid: df6f6e861aee58938b2c2ee78860bc99, type: 2}
+  unhappyMaterial: {fileID: 2100000, guid: 3fef50c89bfcb70a6b63b6afef7bfc26, type: 2}
+  pissedMaterial: {fileID: 2100000, guid: 940b9f375ca45b945ab24cf12ae84370, type: 2}
