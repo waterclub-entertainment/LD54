@@ -26,16 +26,21 @@ public class WaterConfig : MonoBehaviour
     [Range(0f, 1f)]
     public float NormalNoiseRatio;
     // Start is called before the first frame update
+    private void Awake()
+    {
+        blk = new MaterialPropertyBlock();
+    }
     void Start()
     {
         r = GetComponent<SpriteRenderer>();
-        blk = new MaterialPropertyBlock();
         r.GetPropertyBlock(blk);
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (blk == null)
+            return;
         r.GetPropertyBlock(blk, 0);
         blk.SetTexture("_MainTex", r.sprite.texture);
         blk.SetVector("_BGSize", BackgroundSize);
