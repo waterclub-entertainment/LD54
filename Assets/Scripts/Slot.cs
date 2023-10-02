@@ -48,14 +48,14 @@ public class Slot : MonoBehaviour
 
     public void RemoveToken()
     {
-        token = null;
-        SpaRoom.LeaveRoom(token.Parent);
         if (entity != null)
         {
             SpaRoom.LeaveRoom(entity);
             entity.Navigate.StartNavigation();
             entity = null;
         }
+        SpaRoom.LeaveRoom(token.Parent);
+        token = null;
     }
 
     public void CompleteOperation()
