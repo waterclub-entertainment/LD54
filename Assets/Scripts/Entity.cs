@@ -125,8 +125,16 @@ public class Entity : MonoBehaviour
         return null;
     }
 
-    public void SetConflict(bool conflict) {
-        transform.Find("conflict").gameObject.SetActive(conflict);
+    public void SetConflict(Enums.Species? conflict) {
+        var speech = GetComponentInChildren<Speech>(true);
+        if (conflict is Enums.Species species) {
+            transform.Find("conflict").gameObject.SetActive(true);
+            speech.gameObject.SetActive(true);
+            speech.SetSpirit(species, true);
+        } else {
+            speech.gameObject.SetActive(false);
+            transform.Find("conflict").gameObject.SetActive(false);
+        }
     }
 
     // Update is called once per frame

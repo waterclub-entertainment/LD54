@@ -74,7 +74,7 @@ public class Slot : MonoBehaviour
         if (entity != null)
         {
             if (!SpaRoom.HasConflict()) {
-                entity.SetConflict(false);
+                entity.SetConflict(null);
                 operating += Time.deltaTime;
                 progressImage.enabled = true;
                 progressImage.fillAmount = 1.0f - (operating / operationTime);
@@ -83,12 +83,10 @@ public class Slot : MonoBehaviour
                     CompleteOperation();
                 }
             } else {
-                if (SpaRoom.IsConflicting(entity.Species)) {
-                    Debug.Log("Conflicting: " + entity.Species);
-                    entity.SetConflict(true);
-                } else {
-                    entity.SetConflict(false);
-                    // TODO: This entity is not fighting, but maybe we should still indicate that it is not progressing? Maybe it should be progressing?
+                var conflict = SpaRoom.IsConflicting(entity.Species);
+                entity.SetConflict(conflict);
+                if (conflict is Enums.Species species) {
+                    Debug.Log("Conflicting: " + entity.Species + " with " + species);
                 }
             }
         }

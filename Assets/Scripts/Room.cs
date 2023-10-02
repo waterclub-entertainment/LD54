@@ -13,7 +13,7 @@ public class Room : MonoBehaviour
 
 
     private List<Entity> entities = new List<Entity>();
-    private HashSet<Enums.Species> conflictingSpecies = new HashSet<Enums.Species>();
+    private Dictionary<Enums.Species, Enums.Species> conflictingSpecies = new Dictionary<Enums.Species, Enums.Species>();
 
     // Start is called before the first frame update
     void Start()
@@ -51,7 +51,7 @@ public class Room : MonoBehaviour
         return conflictingSpecies.Count != 0;
     }
 
-    public bool IsConflicting(Enums.Species sp) {
-        return conflictingSpecies.Contains(sp);
+    public Enums.Species? IsConflicting(Enums.Species sp) {
+        return conflictingSpecies[sp];
     }
 }
