@@ -9,6 +9,7 @@ using UnityEngine.Events;
 public class Navigator : MonoBehaviour
 {
     public float speed;
+    public float idleWaitTime = 1f;
     public float sqrArrivalRadius;
 
     public NavNode goal = null;
@@ -55,11 +56,13 @@ public class Navigator : MonoBehaviour
 
     public void StopNavigation()
     {
+        CancelInvoke("StartNavigation");
         goal = null;
         isGoing = false;
     }
     public void StartNavigation()
     {
+        CancelInvoke("StartNavigation");
         isGoing=true;
         if (goal == null)
             FindDirection();
@@ -87,11 +90,11 @@ public class Navigator : MonoBehaviour
     public void SetDirection(NavNode g)
     {
         positionSeries.Clear();
-        isGoing = true;
         goal = g;
         List<NavNode> tmp = new List<NavNode>();
         navManager.GetPath(currentNode, ref positionSeries, goal, ref tmp);
         positionSeries.Insert(0, currentNode);
+        StartNavigation();
     }
 
     // Update is called once per frame
@@ -144,7 +147,8 @@ public class Navigator : MonoBehaviour
                     currentNode = goal;
                     OnNavigatorArrived.Invoke(this, goal);
                     goal = null;
-                    FindDirection();
+                    StopNavigation();
+                    Invoke("StartNavigation", idleWaitTime);
                 }
             }
         }
