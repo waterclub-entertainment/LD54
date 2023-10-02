@@ -70,7 +70,7 @@ public class Entity : MonoBehaviour
     {
         var res = IsOperationAllowed(slot.GetComponent<Slot>().appliedTreatment);
         if (res is Reaction reaction) {
-            ShowReaction(reaction);
+            StartCoroutine(ShowReaction(reaction));
             return false;
         } else {
             nav.SetDirection(slot);
@@ -78,12 +78,18 @@ public class Entity : MonoBehaviour
         }
     }
 
-    public void ShowReaction(Reaction reaction) {
-        // TODO
+    public IEnumerator ShowReaction(Reaction reaction) {
+        var speech = GetComponentInChildren<Speech>(true);
+        if (reaction.room is Enums.Operation op) {
+            speech.gameObject.SetActive(true);
+            speech.SetRoomIcon(op, reaction.forbidden);
+            yield return new WaitForSeconds(3f);
+            speech.gameObject.SetActive(false);
+        } else {
+            // TODO: probably hotRoom == true
+        }
     }
 
-    // TODO: When returning false this should also return the reaction (speech bubble)
-    // that should be displayed.
     private Reaction? IsOperationAllowed(Enums.Operation op) {
         // Has to undress first
         if (lastOperation == null && op != Enums.Operation.CHANGING_ROOM) {

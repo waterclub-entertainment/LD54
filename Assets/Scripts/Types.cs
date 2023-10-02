@@ -22,7 +22,6 @@ namespace Enums
 
     public enum Operation
     {
-        STEAM_BATH,
         CHANGING_ROOM,
         EXIT,
         SAUNA,
