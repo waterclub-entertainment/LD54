@@ -2250,6 +2250,7 @@ GameObject:
   - component: {fileID: 1420668721054683928}
   - component: {fileID: 8811435447070963017}
   - component: {fileID: 4263529987470660553}
+  - component: {fileID: 7152286870311462845}
   m_Layer: 0
   m_Name: Crane
   m_TagString: Untagged
@@ -2336,6 +2337,20 @@ MonoBehaviour:
   Refusal: {fileID: 8292444225547392525}
   Species: 7
   mood: -5
+--- !u!114 &7152286870311462845
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7355332566104917905}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b53b16dbd2394843841b9b7c2757146, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wisp: {fileID: 21300000, guid: 7841380d6f94f084280f7a3417631bdf, type: 3}
+  wispPrefab: {fileID: 3625325957174600490, guid: 8e4d70ace4f1ab0438749218b497af37, type: 3}
 --- !u!1 &7374953267099835182
 GameObject:
   m_ObjectHideFlags: 0

@@ -1915,6 +1915,7 @@ GameObject:
   - component: {fileID: 4559056370627261277}
   - component: {fileID: 6212757403319539918}
   - component: {fileID: 7353777213683931740}
+  - component: {fileID: 4438137057231887300}
   m_Layer: 0
   m_Name: Raven
   m_TagString: Untagged
@@ -2002,6 +2003,20 @@ MonoBehaviour:
   Refusal: {fileID: 4105851761856602797}
   Species: 3
   mood: -5
+--- !u!114 &4438137057231887300
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8258787557319334584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b53b16dbd2394843841b9b7c2757146, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wisp: {fileID: 21300000, guid: d50ac5eccf10f0046840481e2d9fb837, type: 3}
+  wispPrefab: {fileID: 3625325957174600490, guid: 8e4d70ace4f1ab0438749218b497af37, type: 3}
 --- !u!1 &8618259108892407888
 GameObject:
   m_ObjectHideFlags: 0

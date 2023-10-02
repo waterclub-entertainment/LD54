@@ -2542,6 +2542,7 @@ GameObject:
   - component: {fileID: 4374632311201819844}
   - component: {fileID: 28697436816577731}
   - component: {fileID: 2552326498215746942}
+  - component: {fileID: 1862001981605517882}
   m_Layer: 0
   m_Name: Rat
   m_TagString: Untagged
@@ -2629,6 +2630,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InitialHeading: 1
+--- !u!114 &1862001981605517882
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8901624723324252157}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b53b16dbd2394843841b9b7c2757146, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wisp: {fileID: 21300000, guid: fcf81b3505cfbdb48a6d60b6259cbcb2, type: 3}
+  wispPrefab: {fileID: 3625325957174600490, guid: 8e4d70ace4f1ab0438749218b497af37, type: 3}
 --- !u!1001 &1852841656196491023
 PrefabInstance:
   m_ObjectHideFlags: 0

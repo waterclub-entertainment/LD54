@@ -668,6 +668,7 @@ GameObject:
   - component: {fileID: 3706403940012983796}
   - component: {fileID: 6437132108112437097}
   - component: {fileID: 3132474410068148509}
+  - component: {fileID: 1370296965576887514}
   m_Layer: 0
   m_Name: Frog
   m_TagString: Untagged
@@ -755,6 +756,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   InitialHeading: 1
+--- !u!114 &1370296965576887514
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3251320290774989856}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b53b16dbd2394843841b9b7c2757146, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  wisp: {fileID: 21300000, guid: 379deacd7ddf309488e8d94cebba07f0, type: 3}
+  wispPrefab: {fileID: 3625325957174600490, guid: 8e4d70ace4f1ab0438749218b497af37, type: 3}
 --- !u!1 &3571740686475992752
 GameObject:
   m_ObjectHideFlags: 0
