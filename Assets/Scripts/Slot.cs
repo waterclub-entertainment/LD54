@@ -10,6 +10,8 @@ public class Slot : MonoBehaviour
     public Room SpaRoom;
     public Image progressImage;
 
+    public bool IsActive { get { return progressImage.enabled; } }
+
     SpriteRenderer refSprite;
 
     private EntityToken token;
