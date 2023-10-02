@@ -169,6 +169,13 @@ public class Entity : MonoBehaviour
         }
     }
 
+    public void StopConflict()
+    {
+        var speech = GetComponentInChildren<Speech>(true);
+        speech.gameObject.SetActive(false);
+        transform.Find("conflict").gameObject.SetActive(false);
+    }
+
     // Update is called once per frame
     void Update()
     {

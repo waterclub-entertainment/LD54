@@ -29,6 +29,7 @@ public class Room : MonoBehaviour
     public void LeaveRoom(Entity e)
     {
         entities.Remove(e);
+        e.StopConflict();
     }
 
     //VERIFY
