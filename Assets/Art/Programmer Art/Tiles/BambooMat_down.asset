@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BambooMat_down
   m_EditorClassIdentifier: 
   m_Sprite: {fileID: 21300000, guid: 9d782c99bfe924f48af5f02321bd39ea, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.72365606, g: 0.7444667, b: 0.8867924, a: 1}
   m_Transform:
     e00: 1
     e01: 0
