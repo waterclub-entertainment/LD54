@@ -736,7 +736,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Species: 6
-  mood: 0
+  mood: -5
 --- !u!114 &3132474410068148509
 MonoBehaviour:
   m_ObjectHideFlags: 0

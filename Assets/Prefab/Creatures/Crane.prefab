@@ -2038,7 +2038,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Species: 7
-  mood: 0
+  mood: -5
 --- !u!1 &7374953267099835182
 GameObject:
   m_ObjectHideFlags: 0
