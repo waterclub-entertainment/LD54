@@ -26,6 +26,7 @@ public class Slot : MonoBehaviour
         refSprite = GetComponentInChildren<SpriteRenderer>();
         refSprite.transform.up = Vector3.up;
         progressImage.enabled = false;
+        SpaRoom = GetComponentInParent<Room>();
     }
 
     public void OnSetToken(EntityToken token)
