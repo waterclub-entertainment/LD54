@@ -21,12 +21,18 @@ public class ScoreEnabler : MonoBehaviour
 
     public void OnScoreChanged(ScoreKeeper keeper)
     {
+        bool cond = false;
+        if (species == Enums.Species.COUNT)
+            cond = keeper.GetTotalScore() >= count;
+        else
+            cond = keeper.GetScore(species) >= count;
+
         for(int i = 0; i < transform.childCount; i++)
         {
             if (transform.GetChild(i).gameObject.tag != "Hint")
-                transform.GetChild(i).gameObject.SetActive(keeper.GetScore(species) >= count);
+                transform.GetChild(i).gameObject.SetActive(cond);
             else
-                transform.GetChild(i).gameObject.SetActive(keeper.GetScore(species) < count);
+                transform.GetChild(i).gameObject.SetActive(!cond);
         }
     }
 }

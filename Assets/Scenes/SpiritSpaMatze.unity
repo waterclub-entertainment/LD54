@@ -77569,7 +77569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 230755d3a50944243add20261eb90cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  species: 9
+  species: 10
   count: 6
 --- !u!1 &990472295
 GameObject:
@@ -78546,7 +78546,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 230755d3a50944243add20261eb90cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  species: 9
+  species: 10
   count: 3
 --- !u!114 &1471932853 stripped
 MonoBehaviour:
@@ -79066,8 +79066,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 230755d3a50944243add20261eb90cd6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  species: 1
-  count: 5
+  species: 10
+  count: 9
 --- !u!1 &1799945967
 GameObject:
   m_ObjectHideFlags: 0
